@@ -43,6 +43,7 @@ const main = () => {
     })();
     initializeToDo();
 };
+
 // TO-DO
 const initializeToDo = () => {
     const todoList = document.querySelector('.todo-list');
