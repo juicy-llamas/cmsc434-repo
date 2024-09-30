@@ -37,7 +37,7 @@ nav {
     height: 4rem;
     display: flex;
     flex-direction: row;
-    background-color: #8F5BF4;
+    background-color: #8f5bf4;
     position: sticky;
 }
 
@@ -50,8 +50,8 @@ nav button {
 }
 
 nav .selected {
-    color: #FF8;
-    background-color: #5F29E6;
+    color: #ff8;
+    background-color: #5f29e6;
 }
 
 /* style for main pages */
@@ -71,6 +71,58 @@ main div {
 
 main .selected {
     display: block;
+}
+
+/* style for color tab */
+#tab5pt1 {
+    color: yellow;
+    text-align: center;
+}
+
+#tab5pt1 span {
+    background-color: black;
+}
+
+#tab5pt2 {
+    color: purple;
+    text-align: center;
+}
+
+#tab5pt2 span {
+    background-color: yellow;
+}
+
+/* Style for LR tab */
+#tab6 {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* style for color tab */
+#tab5pt1 {
+    color: yellow;
+    text-align: center;
+}
+
+#tab5pt1 span {
+    background-color: black;
+}
+
+#tab5pt2 {
+    color: purple;
+    text-align: center;
+}
+
+#tab5pt2 span {
+    background-color: yellow;
+}
+
+/* Style for LR tab */
+#tab6 {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
 }
 
 /* To-do Styling */
