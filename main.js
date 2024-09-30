@@ -1,10 +1,9 @@
-
 const main = () => {
     const buttons = document.querySelector("nav").children;
     const pages = document.querySelector("main").children;
 
-    let last_btn = pages[0];
-    let last_page = buttons[0];
+    let last_btn = buttons[0];
+    let last_page = pages[0];
 
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].onclick = (() => (e) => {
@@ -16,10 +15,9 @@ const main = () => {
             last_btn = buttons[i];
             last_page = pages[i];
         })();
-
     }
 
-    // page 2 form data tracker
+    // Page 2 form data tracker
     (() => {
         let value_one = "Cheese";
         let value_two = "Cheese";
@@ -34,17 +32,29 @@ const main = () => {
                 }
 
                 for (let i = 0; i < plugs.length; i++) {
-                    plugs[i].innerHTML = `You picked ${value_one} ` +
-                        `and ${value_two}`;
+                    plugs[i].innerHTML = `You picked ${value_one} and ${value_two}`;
                 }
             };
         }
-
     })();
+
     initializeToDo();
+
+    // Profile image handling
+    const image = document.getElementById("image");
+    const notification = document.getElementById("notification");
+
+    if (image && notification) {
+        image.onclick = () => {
+            notification.style.display = "block";
+        };
+        window.closeNotification = () => {
+            notification.style.display = "none";
+        };
+    }
 };
 
-// TO-DO
+// TO-DO Initialization
 const initializeToDo = () => {
     const todoList = document.querySelector('.todo-list');
 
@@ -72,6 +82,7 @@ const initializeToDo = () => {
             ev.target.classList.toggle('checked');
         }
     }, false);
+
     window.newElement = function () {
         const li = document.createElement("li");
         li.className = 'todo-item';
@@ -89,15 +100,6 @@ const initializeToDo = () => {
 
         addCloseButtons();
     };
-    //profile image thing
-    const image = document.getElementById("image");
-    const notification = document.getElementById("notification");
-    image.onclick = () => {
-        notification.style.display = "block";
-    }
-    window.closeNotification = () => {
-        notification.style.display = "none";
-    }
 };
 
 window.onload = main;
