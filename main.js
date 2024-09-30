@@ -43,7 +43,6 @@ const main = () => {
     const image = document.getElementById("image");
     const notification = document.getElementById("notification");
     image.onclick = () => {
-        
         notification.style.display = "block";
     }
     window.closeNotification = () => {

@@ -113,5 +113,16 @@ main .selected {
   border-radius: 50%;
   cursor: pointer;
 }
+.close {
+  border: 2px solid black; 
+  padding:5px 10px;     
+  border-radius: 5px;      
+  background-color: #f1f1f1; 
+  cursor: pointer;      
+}
+
+.close:hover {
+  background-color: #ddd;  
+}
 
 
