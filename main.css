@@ -62,11 +62,15 @@ main {
   /* view height minus header height minus padding */
   height: calc(100vh - 4rem - 4rem);
 }
-
+ 
 main div {
   display: none;
   width: 100%;
   font-size: 1.1rem;
+}
+
+main .profile {
+  display: block;
 }
 
 main .selected {
@@ -97,3 +101,17 @@ main .selected {
   bottom: 20px;
   right: 20px;
 }
+/* style for profile*/
+.profile {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.profile img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
