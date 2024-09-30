@@ -89,6 +89,15 @@ const initializeToDo = () => {
 
         addCloseButtons();
     };
+    //profile image thing
+    const image = document.getElementById("image");
+    const notification = document.getElementById("notification");
+    image.onclick = () => {
+        notification.style.display = "block";
+    }
+    window.closeNotification = () => {
+        notification.style.display = "none";
+    }
 };
 
 window.onload = main;

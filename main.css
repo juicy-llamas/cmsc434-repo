@@ -69,6 +69,10 @@ main div {
     font-size: 1.1rem;
 }
 
+main .profile {
+    display: block;
+}
+
 main .selected {
     display: block;
 }
@@ -173,4 +177,29 @@ main .selected {
     bottom: 20px;
     right: 20px;
     text-align: right;
+}
+
+/* style for profile*/
+.profile {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.close {
+    border: 2px solid black;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+.close:hover {
+    background-color: #ddd;
 }
