@@ -1,93 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta name="viewport" content="wclassth=device-width, initial-scale=1.0">
+  <head>
+    <meta name="viewport" content="wclassth=device-width, initial-scale=1.0" />
     <title>Phase 2</title>
-    <link rel="stylesheet" href="main.css">
-</head>
-<body>
-    <script src="main.js">ono no scripp oooooOOAOAOAOAAAAAAAAAAAAAA</script>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <script src="main.js">
+      ono no scripp oooooOOAOAOAOAAAAAAAAAAAAAA
+    </script>
     <section class="outline">
-        
-        <header>
-            <button class='user-btn'>User</button>
-            <button>Today</button>
-            <button>Help</button>
-            <button><img src="notification.png" alt="Notification"/></button>
-        </header>
-        
-        <main>
-            <div class='main-page'>
-                <div class = "streak-display">
-                    <p>Streak!</p>
-                    <div class="streak-circle">
-                        <span>1</span>
-                    </div>
-                    <div class="high-score">
-                      <h3>High-Score</h3>
-                    </div>
-                </div>
+      <header>
+        <button class="user-btn">User</button>
+        <button>Today</button>
+        <button>Help</button>
+        <button><img src="notification.png" alt="Notification" /></button>
+      </header>
 
-                <div class="graph-section">
-                    <div class="exercisetab graph-menu">
-                        <button class="active">Steps</button>
-                        <button class="active">Exercise</button>
-                        <button class="active">Weight</button>
-                    </div>
-                    <div class="timetab graph-menu">
-                        <button class="active">Day</button>
-                        <button class="active">Week</button>
-                        <button class="active">Month</button>
-                    </div>
-                    <div class="graph">
-                        <div class="bar" style="height: 50%;"></div>
-                        <div class="bar" style="height: 40%;"></div>
-                        <div class="bar" style="height: 70%;"></div>
-                        <div class="bar" style="height: 90%;"></div>
-                        <div class="bar" style="height: 20%;"></div>
-                        <div class="bar" style="height: 30%;"></div>
-                        <div class="bar" style="height: 80%;"></div>
-                    </div>
-                    
-                    <div class="arrow-down">
-                        <h3 class="streak-display"> scroll down </h3>
-                    </div>
-                </div>
+      <main>
+        <div class="main-page">
+          <div class="streak-display">
+            <p>Streak!</p>
+            <div class="streak-circle">
+              <span>1</span>
             </div>
-            <div class='user-page'>
-                user
+            <div class="high-score">
+              <h3>High-Score</h3>
             </div>
-            <div class='activity-page'>
-                activity
-            </div>
-            <div class='dashboard-page'>
-                dashboard
-            </div>
-            <div class='nutrition-page'>
-                nutrition
-            </div>
-        </main>
+          </div>
 
-        <div class="persistent">
-            <div class="svg-circle main-btn">
-                <svg viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2 12.32H22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M2 18.32H22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M2 6.32001H22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+          <div class="graph-section">
+            <div class="exercisetab graph-menu">
+              <button class="active">Steps</button>
+              <button class="active">Exercise</button>
+              <button class="active">Weight</button>
             </div>
+            <div class="timetab graph-menu">
+              <button class="active">Day</button>
+              <button class="active">Week</button>
+              <button class="active">Month</button>
+            </div>
+            <div class="graph">
+              <div class="bar" style="height: 50%"></div>
+              <div class="bar" style="height: 40%"></div>
+              <div class="bar" style="height: 70%"></div>
+              <div class="bar" style="height: 90%"></div>
+              <div class="bar" style="height: 20%"></div>
+              <div class="bar" style="height: 30%"></div>
+              <div class="bar" style="height: 80%"></div>
+            </div>
+
+            <div class="arrow-down">
+              <h3 class="streak-display">scroll down</h3>
+            </div>
+          </div>
         </div>
+        <div class="user-page">user</div>
+        <div class="activity-page">
+          <div class="week-view">
+            <pre>&lt;              This Week               &gt;</pre>
+          </div>
+          <div class="act-select">
+            <label>Activity:</label>
+            <select id="types">
+              <option value="cardio">Cardio</option>
+              <option value="weights">Weights</option>
+              <option value="yoga">Yoga</option>
+              <option value="swim">Swimming</option>
+            </select>
+          </div>
+          <div class="act-graph">
+            <p>Distance: 98 miles Time: 4.8 Hours</p>
+            <p>Goal: 120 miles</p>
+            <img src="../Cardio.png" id="cgraph" alt="Monthly cardio" />
+          </div>
+          <div class="act-edit"><b>Edit</b></div>
+        </div>
+        <div class="dashboard-page">dashboard</div>
+        <div class="nutrition-page">nutrition</div>
+      </main>
 
-        <footer>
-            <nav>
-                <button class='activity-btn'>Activity</button>
-                <button class="dashboard-btn">
-                    <div class="color-grclass">
-                    </div>Dashboard</button>
-                <button class='nutrition-btn'>Nutrition</button>
-            </nav>
-        </footer>
+      <div class="persistent">
+        <div class="svg-circle main-btn">
+          <svg
+            viewBox="-0.5 0 25 25"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 12.32H22"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M2 18.32H22"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M2 6.32001H22"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+      </div>
 
+      <footer>
+        <nav>
+          <button class="activity-btn">Activity</button>
+          <button class="dashboard-btn">
+            <div class="color-grclass"></div>
+            Dashboard
+          </button>
+          <button class="nutrition-btn">Nutrition</button>
+        </nav>
+      </footer>
     </section>
-</body>
+  </body>
 </html>
