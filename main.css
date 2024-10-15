@@ -1,3 +1,13 @@
+
+:root {
+    --header-font-color: #000000; 
+    --header-bg-color: #80CFF2;
+    --footer-font-color: #000000;
+    --footer-bg-color: #80CFF2;
+    --main-font-color: #ffffff;
+    --main-bg-color: #0d1f27;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,6 +15,8 @@
     font-family: Arial, sans-serif;
 
 }
+
+/* phone outline & content */
 
 body {
     background-color: #ffffff;
@@ -21,42 +33,64 @@ body {
     border: 16px black solid;
     border-radius: 36px;
     overflow: hidden;
-    background-color: #0d1f27;
 }
-.header {
+
+/* header */
+
+header {
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 60px;
-    background-color: #80CFF2;
+    background-color: var( --header-bg-color );
 }
-.header button {
+header * {
+    font-size: 1.2rem;
+    color: var( --header-font-color );
+}
+header button {
     background: none;
     border: none;
     cursor: pointer;
 }
-.header img {
+header img {
     width: 24px;
     height: 24px;
+    position: relative;
+    top: 2px;
 }
 
-.content {
+/* main content */
+
+main {
+    height: calc(100% - 120px);
+    background-color: var( --main-bg-color );
+}
+main > div {
+    padding-top: 10px;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding-top: 10px;
-    height: calc(100% - 120px);
+}
+main * {
+    color: var( --main-font-color );
 }
 
+/* streak */
 
 .streak-display {
     text-align: center;
     margin-bottom: 10px;
-    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .streak-display p {
     font-size: 1.5rem;
-    margin-bottom: 5px;
+    margin-bottom: 12px;
+    width: 100%;
 }
 .streak-circle {
     width: 80px;
@@ -67,69 +101,108 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 2rem;
+    margin-bottom: 12px;
+}
+.streak-circle span {
+    text-align: center;
     color: rgb(207, 254, 0);
 }
 
+/* graph */
 
 .graph-section {
-    width: 80%;
+    width: 100%;
     margin-top: 20px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.exercisetab button {
+
+.graph-menu button {
     border: none;
     background: none;
     margin: 3px;
     cursor: pointer;
     font-size: 1rem;
 }
-.exercisetab .active {
+.graph-menu .active {
     font-weight: bold;
-    color: rgb(255, 255, 255);
 }
-
-
-.timetab button {
-    border: none;
-    background: none;
-    margin: 3px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-.timetab .active {
-    font-weight: bold;
-    color: rgb(255, 255, 255);
-}
-
-
 
 .graph {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     height: 100px;
+    width: 80%;
     margin-top: 10px;
     border: 1px solid rgb(255, 255, 255);
     padding: 5px;
 }
 
-
 .bar {
     width: 20%;
     background-color: red;
 }
-.navbar {
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid white;
+    margin: 20px auto;
+}
+
+/* persistent stuff */
+
+.persistent {
+    width: 100%;
+    height: calc(100% - 120px);
+    position: relative;
+    top: calc( 120px - 100% );
+    left: 0%;
+}
+
+.persistent .svg-circle {
+    width: 64px;
+    height: 64px;
+    position: relative;
+    top: calc( 100% * 4/5 );
+    left: calc( 100% * 3/4 );
+    border: 0.20rem solid white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.persistent .svg-circle svg {
+    stroke: #ffffff;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%;
+    position: relative;
+}
+
+/* footer content */
+
+footer {
+    display: flex;
+    height: 60px;
+    background-color: var( --footer-bg-color );
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+footer nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 60px;
-    background-color: #80CFF2;
-    position: absolute;
-    bottom: 0;
+    height: 100%;
     width: 100%;
     border-top: 1px solid black;
 }
-.navbar button {
+footer nav button {
     flex: 1;
     background: none;
     border: none;
@@ -140,13 +213,15 @@ body {
     align-items: center;
 }
 
+/* nav related stuff */
 
-.arrow-down {
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 15px solid white;
-    margin: 20px auto;
+main > div {
+    display: none;
 }
+.selected {
+    display: block;
+}
+
+
+
 

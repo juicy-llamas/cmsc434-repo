@@ -1,105 +1,41 @@
 const main = () => {
-    const buttons = document.querySelector("nav").children;
-    const pages = document.querySelector("main").children;
+    const names = [ 'main', 'user', 'activity', 
+                    'dashboard', 'nutrition' ];
 
-    let last_btn = buttons[0];
-    let last_page = pages[0];
+    const buttons = names.reduce( ( obj, e ) => {
+        obj[ e ] = document.querySelector( "." + e + '-btn' );
+        return obj;
+    }, {} );
+    const pages   = names.reduce( ( obj, e ) => {
+        obj[ e ] = document.querySelector( "." + e + '-page' );
+        return obj;
+    }, {} );
 
-    for (let i = 0; i < buttons.length; i++) {
-        buttons[i].onclick = (() => (e) => {
-            last_btn.classList.remove("selected");
-            last_page.classList.remove("selected");
-            buttons[i].classList.add("selected");
-            pages[i].classList.add("selected");
+    let last_btn = buttons[ 'user' ];
+    let last_page = pages[ 'user' ];
 
-            last_btn = buttons[i];
-            last_page = pages[i];
+    for ( let name of names ) {
+        buttons[name].onclick = (() => (e) => {
+            console.log( name );
+
+            last_btn.classList.remove( "selected" );
+            last_page.classList.remove( "selected" );
+            buttons[ name ].classList.add( "selected" );
+            pages[ name ].classList.add( "selected" );
+
+            last_btn = buttons[ name ];
+            last_page = pages[ name ];
         })();
     }
 
-    // Page 2 form data tracker
-    (() => {
-        let value_one = "Cheese";
-        let value_two = "Cheese";
-        const plugs = document.getElementsByClassName("elm_to_insert");
-
-        for (const elm of pages[1].querySelector("form").children) {
-            elm.onchange = (e) => {
-                if (e.target.name === "cheese") {
-                    value_one = e.target.value;
-                } else if (e.target.name === "cheese_two") {
-                    value_two = e.target.value;
-                }
-
-                for (let i = 0; i < plugs.length; i++) {
-                    plugs[i].innerHTML = `You picked ${value_one} and ${value_two}`;
-                }
-            };
-        }
-    })();
-
-    initializeToDo();
-
-    // Profile image handling
-    const image = document.getElementById("image");
-    const notification = document.getElementById("notification");
-
-    if (image && notification) {
-        image.onclick = () => {
-            notification.style.display = "block";
-        };
-        window.closeNotification = () => {
-            notification.style.display = "none";
-        };
+    // display main page
+    buttons[ 'main' ].onclick();
+    
+    // customizing bar width to match bar amt
+    const bars = document.querySelectorAll( '.bar' );
+    for ( bar of bars ) {
+        bar.style.width = ( (200/3) / bars.length ).toString() + '%';
     }
-};
-
-// TO-DO Initialization
-const initializeToDo = () => {
-    const todoList = document.querySelector('.todo-list');
-
-    const addCloseButtons = () => {
-        const items = document.querySelectorAll('.todo-item');
-        items.forEach(item => {
-            if (!item.querySelector('.close')) {
-                const span = document.createElement("SPAN");
-                const txt = document.createTextNode("\u00D7");
-                span.className = "close";
-                span.appendChild(txt);
-                item.appendChild(span);
-
-                span.onclick = function () {
-                    item.style.display = "none";
-                }
-            }
-        });
-    };
-
-    addCloseButtons();
-
-    todoList.addEventListener('click', function (ev) {
-        if (ev.target.tagName === 'LI') {
-            ev.target.classList.toggle('checked');
-        }
-    }, false);
-
-    window.newElement = function () {
-        const li = document.createElement("li");
-        li.className = 'todo-item';
-        const inputValue = document.getElementById("myInput").value;
-        const t = document.createTextNode(inputValue);
-
-        if (inputValue === '') {
-            alert("Please enter a task?");
-            return;
-        }
-
-        li.appendChild(t);
-        todoList.appendChild(li);
-        document.getElementById("myInput").value = "";
-
-        addCloseButtons();
-    };
 };
 
 window.onload = main;
