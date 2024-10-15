@@ -1,107 +1,59 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta name="description" value="Phase 1.2" />
-        <meta name="title" value="Phase 1.2" />
-        <meta name="viewport" 
-              content="width=device-width, initial-scale=1" />
-
-        <!-- feel free to add links here, install fonts, etc -->
-        <link rel="stylesheet" type="text/css" href="main.css" />
-        <script src="main.js"></script>
-    </head>
-    <body>
-        <div class="mobile-container">
-            <nav>
-                <button class="selected">Text</button>
-                <button>Choices</button>
-                <button>ToDo</button>
-                <button>Profiles</button>
-                <button>Color</button>
-                <button>LR</button>
-            </nav>
-            <main>
-                <!-- elms are placed in order, elm #1 is default -->
-                <div class="selected">
-                    <h1>Text</h1>
-                    <br />
-                    <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Magna sapien phasellus mus egestas consectetur conubia nunc sollicitudin. Blandit vestibulum nam porttitor dignissim sed. Accumsan dictum nunc sed congue at est porttitor id sed. Fames justo fusce quisque tempus himenaeos sapien egestas. Taciti mattis sit dictumst ultricies in tortor. Tellus tincidunt dis dis class ut. Conubia praesent est tortor, justo malesuada congue cursus. Facilisi vulputate viverra ornare nostra ut egestas eros.</p>
-                    <p>Augue lobortis mauris habitant; ridiculus cras ipsum. Senectus libero nisl varius interdum et pharetra odio. Malesuada nisi in eros nascetur natoque dolor penatibus etiam mi. Interdum phasellus nam cras dapibus laoreet, habitant aptent. Nulla aptent habitant tortor elit gravida praesent. Eros maximus porta vulputate euismod penatibus at cubilia eu. Nam hendrerit molestie netus sodales conubia scelerisque vel duis. Egestas congue magnis primis sed ridiculus cursus. Lacus hac tempor aliquet torquent varius natoque mus.</p>
-                    <p>In potenti senectus phasellus, turpis rhoncus volutpat senectus. Dolor fames leo posuere natoque bibendum; leo lorem mi taciti. Quis varius sagittis vehicula, nullam risus sagittis eros nec venenatis. Odio facilisi in condimentum adipiscing finibus nunc. Diam eros augue fringilla convallis nisl magnis. Viverra dis adipiscing ultricies phasellus egestas maecenas justo ad. Sapien mollis egestas commodo massa; risus aptent egestas cubilia.</p>
-                    <p>Dictum laoreet mattis dapibus eget auctor. Sit morbi sit quis aenean pulvinar gravida. Integer semper nostra eu; morbi iaculis efficitur. Velit enim sapien integer ridiculus torquent mus. Tellus sagittis ipsum eu commodo eu urna mus elit. Eleifend donec sollicitudin facilisis fames enim parturient sollicitudin. Lacus amet lacus dolor torquent ligula.</p>
-                    <p>Vel varius congue a taciti curae. Commodo faucibus maximus cubilia suscipit nulla sed in elementum. Aptent tempor netus lacinia; turpis tristique laoreet. Inceptos tincidunt imperdiet tempor placerat class tellus. Rutrum consectetur cras sit amet morbi quam malesuada mauris. Id quisque mollis elit, montes eros consequat. Nascetur ex litora pellentesque hendrerit iaculis quisque ridiculus.</p>
-                    <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Magna sapien phasellus mus egestas consectetur conubia nunc sollicitudin. Blandit vestibulum nam porttitor dignissim sed. Accumsan dictum nunc sed congue at est porttitor id sed. Fames justo fusce quisque tempus himenaeos sapien egestas. Taciti mattis sit dictumst ultricies in tortor. Tellus tincidunt dis dis class ut. Conubia praesent est tortor, justo malesuada congue cursus. Facilisi vulputate viverra ornare nostra ut egestas eros.</p>
-                    <p>Augue lobortis mauris habitant; ridiculus cras ipsum. Senectus libero nisl varius interdum et pharetra odio. Malesuada nisi in eros nascetur natoque dolor penatibus etiam mi. Interdum phasellus nam cras dapibus laoreet, habitant aptent. Nulla aptent habitant tortor elit gravida praesent. Eros maximus porta vulputate euismod penatibus at cubilia eu. Nam hendrerit molestie netus sodales conubia scelerisque vel duis. Egestas congue magnis primis sed ridiculus cursus. Lacus hac tempor aliquet torquent varius natoque mus.</p>
-                    <p>In potenti senectus phasellus, turpis rhoncus volutpat senectus. Dolor fames leo posuere natoque bibendum; leo lorem mi taciti. Quis varius sagittis vehicula, nullam risus sagittis eros nec venenatis. Odio facilisi in condimentum adipiscing finibus nunc. Diam eros augue fringilla convallis nisl magnis. Viverra dis adipiscing ultricies phasellus egestas maecenas justo ad. Sapien mollis egestas commodo massa; risus aptent egestas cubilia.</p>
-                    <br />
-                    <p>Yo check me out <a href=https://llamas.us.to>here</a></p>
-                </div>
-                <div>
-                    <h1>Choices</h1>
-                    <form>
-                        <h3>Pick a cheese</h3>
-                        <input type="radio" name="cheese" 
-                                value="Cheese" checked="checked">
-                                Cheese</input><br />
-                        <input type="radio" name="cheese"
-                                value="Cheese">Cheese</input><br />
-                        <input type="radio" name="cheese" value=
-                                "Big Cheese">Big Cheese</input><br />
-                        <h3>Pick another cheese</h3>
-                        <select name="cheese_two">
-                            <option>Cheese</option>
-                            <option>cheese</option>
-                            <option>chEESE</option>
-                            <option>Gruyere</option>
-                        </select>
-                    </form>
-                    <p class="elm_to_insert">You picked Cheese and Cheese</p>
-                </div>
-
-                <!-- TO DO element -->
-                <div class="todo-container">
-                    <h1>To Do</h1>
-                    <div class="todo-header">
-                        <h2>To Do</h2>
-                        <input type="text" id="myInput" class="todo-input" placeholder="New Entry...">
-                        <span onclick="newElement()" class="addBtn todo-add-btn">Add</span>
-                    </div>
-                    
-                    <ul id="myUL" class="todo-list">
-                        <li class="todo-item">Register for classes</li>
-                        <li class="todo-item checked">Pay tuition and fees</li>
-                        <li class="todo-item">Do Phase 1</li>
-                        <li class="todo-item">Do Phase 2</li>
-                        <li class="todo-item">Do Phase 3</li>
-                        <li class="todo-item">Do Phase 4</li>
-                    </ul>
-                </div>  
-                
-
-                <!--Profile Section-->
-                <div>
-                    <h1>Profiles</h1>
-                    <div class = "profile">
-                        <h2> Cat </h2>
-                        <img id = "image" src = "image.png" alt = "Profile Image" width="200" height="200">
-                    </div>
-
-                    <div id = "notification" class = "notification">
-                        <p> hello </p>
-                        <button class = "close" onclick = "closeNotification()">Close</button>
-                    </div>
-                </div>
-
-                <div>
-                    <h1>Colors</h1>
-                    <h3 id = "tab5pt1"><span>Yellow text with a black background</span></h3>
-                    <h3 id = "tab5pt2"><span>Purple text with a yellow background</span></h3>
-                </div>
-                <div>
-                    <h1>Lower Right</h1>
-                    <p id = "tab6"> Down Here</p>
-                </div>
-            </main>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 2</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="outline">
+        <div class="header">
+            <button>User</button>
+            <button>Today</button>
+            <button>Help</button>
+            <button><img src="notification.png" alt="Notification"/></button>
         </div>
-    </body>
+        <div class="content">
+            <div class = "streak-display">
+                <p>Streak!</p>
+                <div class="streak-circle">
+                    <span>1</span>
+                </div>
+            <div class="high-score">
+              <h3>High-Score</h3>
+            </div>
+        </div>
+
+            <div class="graph-section">
+                <div class="exercisetab">
+                    <button class="active">Steps</button>
+                    <button class="active">Exercise</button>
+                    <button class="active">Weight</button>
+                </div>
+                <div class="timetab">
+                    <button class="active">Day</button>
+                    <button class="active">Week</button>
+                    <button class="active">Month</button>
+                </div>
+                <div class="graph">
+                    <div class="bar" style="height: 50%;"></div>
+                    <div class="bar" style="height: 20%;"></div>
+                    <div class="bar" style="height: 70%;"></div>
+                </div>
+                
+                <div class="arrow-down">
+                    <h3 class="streak-display"> scroll down </h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar">
+            <button>Activity</button>
+            <button class="dashboard">
+                <div class="color-grid">
+                </div>Dash Board</button>
+            <button>Nutrition</button>
+        </div>
+    </div>
+</body>
 </html>

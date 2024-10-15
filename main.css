@@ -1,223 +1,152 @@
 * {
     margin: 0;
     padding: 0;
-    text-decoration: none;
-    font-family: sans-serif;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
-    background-color: black;
-}
-
-.mobile-container {
-    position: absolute;
-    width: 30%;
-    left: 35%;
-    height: 100vh;
-    background-color: white;
-}
-
-/* this removes default button styling */
-button {
-    background: none;
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-}
-
-/* style for nav header */
-
-nav {
-    width: 100%;
-    height: 4rem;
+    background-color: #ffffff;
     display: flex;
-    flex-direction: row;
-    background-color: #8f5bf4;
-    position: sticky;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+.outline {
+    position: relative;
+    width: 360px;
+    height: 640px;
+    border: 16px black solid;
+    border-radius: 36px;
+    overflow: hidden;
+    background-color: #0d1f27;
+}
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    background-color: #80CFF2;
+}
+.header button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.header img {
+    width: 24px;
+    height: 24px;
 }
 
-nav button {
-    color: #000;
-    /*    padding: 0 0.6rem 0 0.6rem; */
-    width: 16.66666666%;
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    height: calc(100% - 120px);
+}
+
+
+.streak-display {
     text-align: center;
-    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: rgb(255, 255, 255);
 }
-
-nav .selected {
-    color: #ff8;
-    background-color: #5f29e6;
+.streak-display p {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
 }
-
-/* style for main pages */
-
-main {
-    padding: 2rem;
-    overflow: scroll;
-    /* view height minus header height minus padding */
-    height: calc(100vh - 4rem - 4rem);
-}
-
-main div {
-    display: none;
-    width: 100%;
-    font-size: 1.1rem;
-}
-
-main .profile {
-    display: block;
-}
-
-main .selected {
-    display: block;
-}
-
-/* style for color tab */
-#tab5pt1 {
-    color: yellow;
-    text-align: center;
-}
-
-#tab5pt1 span {
-    background-color: black;
-}
-
-#tab5pt2 {
-    color: purple;
-    text-align: center;
-}
-
-#tab5pt2 span {
-    background-color: yellow;
-}
-
-/* Style for LR tab */
-#tab6 {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-}
-
-/* style for profile*/
-.profile {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.profile img {
-    width: 150px;
-    height: 150px;
+.streak-circle {
+    width: 80px;
+    height: 80px;
+    border: 2px solid rgb(255, 255, 255);
     border-radius: 50%;
-    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: rgb(207, 254, 0);
 }
 
-.close {
-    border: 2px solid black;
-    padding: 5px 10px;
-    border-radius: 5px;
-    background-color: #f1f1f1;
-    cursor: pointer;
-}
 
-.close:hover {
-    background-color: #ddd;
-}
-
-/* To-do Styling */
-.todo-header {
-    color: white;
+.graph-section {
+    width: 80%;
+    margin-top: 20px;
     text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1;
+}
+.exercisetab button {
+    border: none;
+    background: none;
+    margin: 3px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.exercisetab .active {
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+
+.timetab button {
+    border: none;
+    background: none;
+    margin: 3px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.timetab .active {
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+
+
+.graph {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
+    height: 100px;
+    margin-top: 10px;
+    border: 1px solid rgb(255, 255, 255);
+    padding: 5px;
+}
+
+
+.bar {
+    width: 20%;
+    background-color: red;
+}
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    background-color: #80CFF2;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid black;
+}
+.navbar button {
+    flex: 1;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
-.todo-input {
-    margin: 0;
-    border: solid;
-    width: 10000px;
-    padding: 10px;
-    font-size: 16px;
-    box-sizing: border-box;
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid white;
+    margin: 20px auto;
 }
 
-.todo-add-btn {
-    padding: 10px;
-    background: #d9d9d9;
-    color: #555;
-    border: solid;
-    margin-left: auto;
-    text-align: center;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-    box-sizing: border-box;
-}
-
-.todo-add-btn:hover {
-    background-color: #bbb;
-}
-
-.todo-list {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-
-}
-
-.todo-item {
-    cursor: pointer;
-    position: relative;
-    padding: 12px 8px 12px 40px;
-    background: #eee;
-    font-size: 18px;
-    transition: 0.2s;
-    user-select: none;
-}
-
-.todo-item:nth-child(odd) {
-    background: #f9f9f9;
-}
-
-.todo-item:hover {
-    background: #ddd;
-}
-
-.todo-item.checked {
-    background: #888;
-    color: #fff;
-    text-decoration: line-through;
-}
-
-.todo-item.checked::before {
-    content: '';
-    position: absolute;
-    border-color: #fff;
-    border-style: solid;
-    border-width: 0 2px 2px 0;
-    top: 10px;
-    left: 16px;
-    transform: rotate(45deg);
-    height: 15px;
-    width: 7px;
-}
-
-.todo-item .close {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 12px 16px;
-}
-
-.todo-item .close:hover {
-    background-color: #f44336;
-    color: white;
-}
