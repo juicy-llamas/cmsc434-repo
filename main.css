@@ -24,6 +24,7 @@ body {
   height: 100vh;
   overflow: hidden;
 }
+
 .outline {
   position: relative;
   width: 360px;
@@ -42,15 +43,18 @@ header {
   height: 60px;
   background-color: var(--header-bg-color);
 }
+
 header * {
   font-size: 1.2rem;
   color: var(--header-font-color);
 }
+
 header button {
   background: none;
   border: none;
   cursor: pointer;
 }
+
 header img {
   width: 24px;
   height: 24px;
@@ -64,13 +68,15 @@ main {
   height: calc(100% - 120px);
   background-color: var(--main-bg-color);
 }
-main > div {
+
+main>div {
   padding: 16px;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
+
 main * {
   color: var(--main-font-color);
 }
@@ -85,11 +91,13 @@ main * {
   align-items: center;
   flex-direction: column;
 }
+
 .streak-display p {
   font-size: 1.5rem;
   margin-bottom: 12px;
   width: 100%;
 }
+
 .streak-circle {
   width: 80px;
   height: 80px;
@@ -101,6 +109,7 @@ main * {
   font-size: 2rem;
   margin-bottom: 12px;
 }
+
 .streak-circle span {
   text-align: center;
   color: rgb(207, 254, 0);
@@ -123,6 +132,7 @@ main * {
   cursor: pointer;
   font-size: 1rem;
 }
+
 .graph-menu .active {
   font-weight: bold;
 }
@@ -192,7 +202,7 @@ main * {
   height: 20%;
 }
 
-.user-page > * {
+.user-page>* {
   margin-bottom: 24px;
 }
 
@@ -223,6 +233,7 @@ main * {
   border-radius: 50%;
   cursor: pointer;
 }
+
 .persistent .svg-circle svg {
   stroke: #ffffff;
   width: 80%;
@@ -231,6 +242,7 @@ main * {
   left: 10%;
   position: relative;
 }
+
 /* activty page */
 
 .week-view {
@@ -258,10 +270,12 @@ main * {
   margin-top: 10px;
   text-align: center;
 }
+
 #cgraph {
   margin-top: 20px;
   width: 300px;
 }
+
 .act-edit {
   text-align: center;
   padding: 10px 0;
@@ -276,6 +290,7 @@ main * {
   text-align: center;
   background-color: transparent;
 }
+
 /* footer content */
 
 footer {
@@ -295,6 +310,7 @@ footer nav {
   width: 100%;
   border-top: 1px solid black;
 }
+
 footer nav button {
   flex: 1;
   background: none;
@@ -308,9 +324,60 @@ footer nav button {
 
 /* nav related stuff */
 
-main > div {
+main>div {
   display: none;
 }
+
 .selected {
   display: block;
+}
+
+/* Nutrition Page */
+.nutrition-page {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calorie-form {
+  margin-bottom: 20px;
+}
+
+.calorie-form input {
+  margin: 10px 0;
+  padding: 8px;
+  width: 100%;
+}
+
+.calorie-form button {
+  padding: 10px 20px;
+  background-color: var(--header-bg-color);
+  color: var(--header-font-color);
+  border: none;
+  cursor: pointer;
+}
+
+.calorie-log ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.calorie-log ul li {
+  padding: 8px;
+  background-color: var(--main-bg-color);
+  color: var(--main-font-color);
+  margin-bottom: 5px;
+  border: 1px solid var(--header-bg-color);
+}
+
+.calorie-log p {
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+#add-calorie-btn:hover {
+  cursor: pointer;
 }

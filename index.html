@@ -7,7 +7,6 @@
   </head>
   <body>
     <script src="main.js">
-      ono no scripp oooooOOAOAOAOAAAAAAAAAAAAAA
     </script>
     <section class="outline">
       <header>
@@ -87,7 +86,26 @@
           <div class="act-edit"><b>Edit</b></div>
         </div>
         <div class="dashboard-page">dashboard</div>
-        <div class="nutrition-page">nutrition</div>
+        <div class="nutrition-page">
+          <h1>Nutrition Tracker</h1>
+          <div class="calorie-form">
+            <label for="food">Food Item:</label>
+            <input type="text" id="food" placeholder="Enter food item" />
+
+            <label for="calories">Calories:</label>
+            <input type="number" id="calories" placeholder="Enter calories" />
+            <button id="add-calorie-btn">Add</button>
+          </div>
+
+          <div class="calorie-log">
+            <h2>Today's Intake</h2>
+            <ul id="calorie-list">
+              <li>Subway Veggie Delite: 300 Calories</li>
+            </ul>
+            <p>Total Calories: <span id="total-calories">300</span></p>
+          </div>
+        </div>
+
       </main>
 
       <div class="persistent">
@@ -95,26 +113,22 @@
           <svg
             viewBox="-0.5 0 25 25"
             fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+            xmlns="http://www.w3.org/2000/svg">
             <path
               d="M2 12.32H22"
               stroke-width="1.5"
               stroke-linecap="round"
-              stroke-linejoin="round"
-            />
+              stroke-linejoin="round" />
             <path
               d="M2 18.32H22"
               stroke-width="1.5"
               stroke-linecap="round"
-              stroke-linejoin="round"
-            />
+              stroke-linejoin="round" />
             <path
               d="M2 6.32001H22"
               stroke-width="1.5"
               stroke-linecap="round"
-              stroke-linejoin="round"
-            />
+              stroke-linejoin="round" />
           </svg>
         </div>
       </div>
@@ -130,5 +144,6 @@
         </nav>
       </footer>
     </section>
+
   </body>
 </html>
