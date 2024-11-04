@@ -10,9 +10,15 @@
     </script>
     <section class="outline">
       <header>
-        <button class="user-btn">User</button>
-        <button>Today</button>
-        <button>Help</button>
+        <button class="user-btn">
+            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 2px;">
+            <circle opacity="0.5" cx="12" cy="9" r="3" stroke="#1C274C" stroke-width="1.5"/>
+            <circle cx="12" cy="12" r="10" stroke="#1C274C" stroke-width="1.5"/>
+            <path opacity="0.5" d="M17.9691 20C17.81 17.1085 16.9247 15 11.9999 15C7.07521 15 6.18991 17.1085 6.03076 20" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          User
+        </button>
+        <button><img src="help.png" alt="Notification" style="margin-right: 4px"/>Help</button>
         <button><img src="notification.png" alt="Notification" /></button>
       </header>
 
@@ -26,28 +32,18 @@
           </div>
 
           <div class="graph-section">
-            <div class="exercisetab graph-menu">
-              <button class="active">Steps</button>
-              <button class="active">Exercise</button>
-              <button class="active">Weight</button>
+            <div class="exercisetab">
+              <button class="type">Steps</button>
+              <button class="type">Exercise</button>
+              <button class="type">Weight</button>
             </div>
-            <div class="timetab graph-menu">
-              <button class="active">Day</button>
-              <button class="active">Week</button>
-              <button class="active">Month</button>
-            </div>
-            <div class="graph">
-              <div class="bar" style="height: 50%"></div>
-              <div class="bar" style="height: 40%"></div>
-              <div class="bar" style="height: 70%"></div>
-              <div class="bar" style="height: 90%"></div>
-              <div class="bar" style="height: 20%"></div>
-              <div class="bar" style="height: 30%"></div>
-              <div class="bar" style="height: 80%"></div>
-            </div>
-
-            <div class="arrow-down">
-              <h3 class="streak-display">scroll down</h3>
+          <div class = "maingraph">
+            <img src="graph1.png" alt="graph"  class="graph-content" />
+          </div>
+            <div class="timetab">
+              <button class="time">Day</button>
+              <button class="time">Week</button>
+              <button class="time">Month</button>
             </div>
           </div>
         </div>
@@ -67,6 +63,35 @@
               <img src="beans.png" alt="profile pic" />
               <svg width="28px" height="28px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.56078 20.2501L20.5608 8.25011L15.7501 3.43945L3.75012 15.4395V20.2501H8.56078ZM15.7501 5.56077L18.4395 8.25011L16.5001 10.1895L13.8108 7.50013L15.7501 5.56077ZM12.7501 8.56079L15.4395 11.2501L7.93946 18.7501H5.25012L5.25012 16.0608L12.7501 8.56079Z"/></svg>
             </div>
+          </div>
+          <div style="width:80%;height:3px;position:relative;left:10%;background-color:var( --main-font-color );"></div>
+          <h3>Biometrics</h3>
+          <div class="biometrics">
+            <div class="gender-section">
+              <span>Gender: </span>
+              <label>
+                <input type="radio" name="gender" value="male" />
+                <span class="radio-label">Male</span>
+              </label>
+              <label>
+                <input type="radio" name="gender" value="female" />
+                <span class="radio-label">Female</span>
+              </label>
+              <label>
+                <input type="radio" name="gender" value="other" />
+                <span class="radio-label">Other</span>
+              </label>
+            </div>
+
+            <div class = "height">
+              <span>Height: </span>
+              <input type="text" id="height-ft"/> ft
+              <input type="text" id="height-in"/> in
+            </div>
+          </div>
+          <div class = "weight">
+            <span>  Weight: </span>
+            <input type="text" id="weight"/> lbs
           </div>
           <div style="width:80%;height:3px;position:relative;left:10%;background-color:var( --main-font-color );"></div>
           <h3>Privacy</h3>
