@@ -65,6 +65,7 @@ const main = () => {
             caloriesInput.value = '';
         }
     };
+    
 };
 
 window.onload = main;

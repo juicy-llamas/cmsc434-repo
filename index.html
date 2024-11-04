@@ -10,10 +10,9 @@
     </script>
     <section class="outline">
       <header>
-        <button class="user-btn">User</button>
-        <button>Today</button>
-        <button>Help</button>
-        <button><img src="notification.png" alt="Notification" /></button>
+        <button class="user-btn"><img src="user.png" alt="Notification" />User</button>
+        <button><img src="help.png" alt="Notification" />Help</button>
+        <button><img src="notification.png" alt="Notification" />Noti</button>
       </header>
 
       <main>
@@ -26,28 +25,18 @@
           </div>
 
           <div class="graph-section">
-            <div class="exercisetab graph-menu">
-              <button class="active">Steps</button>
-              <button class="active">Exercise</button>
-              <button class="active">Weight</button>
+            <div class="exercisetab">
+              <button class="type">Steps</button>
+              <button class="type">Exercise</button>
+              <button class="type">Weight</button>
             </div>
-            <div class="timetab graph-menu">
-              <button class="active">Day</button>
-              <button class="active">Week</button>
-              <button class="active">Month</button>
-            </div>
-            <div class="graph">
-              <div class="bar" style="height: 50%"></div>
-              <div class="bar" style="height: 40%"></div>
-              <div class="bar" style="height: 70%"></div>
-              <div class="bar" style="height: 90%"></div>
-              <div class="bar" style="height: 20%"></div>
-              <div class="bar" style="height: 30%"></div>
-              <div class="bar" style="height: 80%"></div>
-            </div>
-
-            <div class="arrow-down">
-              <h3 class="streak-display">scroll down</h3>
+          <div class = "maingraph">
+            <img src="graph1.png" alt="graph"  class="graph-content" />
+          </div>
+            <div class="timetab">
+              <button class="time">Day</button>
+              <button class="time">Week</button>
+              <button class="time">Month</button>
             </div>
           </div>
         </div>
@@ -55,15 +44,42 @@
           <h1>Profile</h1>
           <div class="profile-card">
             <p class="profile-name">Beany the Bean</p>
-            <p class="profile-length">Age: 23</p>
             <p class="profile-joined">Joined 6 months ago</p>
             <img class="profile-img" src="beans.png" alt="profile pic" />
+
+
           </div>
-          <h1>Metrics</h1>
-          <div class="profile-graph">
-            <img src="graph.png" alt="graph" />
+          <h2>Biometrics </h2>
+          <span>Age: </span>
+          <input type="text" id="age"/>
+
+          <div class="gender-section">
+            <span>Gender: </span>
+            <label>
+              <input type="radio" name="gender" value="male" />
+              <span class="radio-label">Male</span>
+            </label>
+            <label>
+              <input type="radio" name="gender" value="female" />
+              <span class="radio-label">Female</span>
+            </label>
           </div>
-          <p>todo: add labels</p>
+
+          <div class = "height">
+            <span>Height: </span>
+            <input type="text" id="height-ft"/> ft
+            <input type="text" id="height-in"/> in
+          </div>
+          <div class = "weight">
+            <span>  Weight: </span>
+            <input type="text" id="weight"/> lbs
+          </div>
+          <button type="button" class="updatebutton">Update</button>
+
+
+
+
+
         </div>
         <div class="activity-page">
           <div class="week-view">
@@ -144,6 +160,5 @@
         </nav>
       </footer>
     </section>
-
   </body>
 </html>
