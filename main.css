@@ -350,6 +350,10 @@ main * {
 
 /* activty page */
 
+.activity-page h1 {
+  text-align: center;
+}
+
 .week-view {
   margin-top: 5px;
   margin-left: auto;
@@ -358,42 +362,58 @@ main * {
   text-align: center;
   align-items: center;
 }
-
-.act-select {
-  text-align: center;
-  padding: 10px 0;
-  margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 20px;
-  width: 280px;
-  height: 50px;
-  border: 5px solid white;
-}
-
 .act-graph {
-  margin-top: 10px;
+  margin-top: 5px;
   text-align: center;
 }
-
 #cgraph {
   margin-top: 20px;
-  width: 300px;
+  width: 200px;
 }
 
-.act-edit {
-  text-align: center;
-  padding: 10px 0;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100px;
-  height: 50px;
-  border: 5px solid white;
+.act-select {
+  margin-top: 10px;
+  border-radius: 25px;
+  background: #fff;
+  padding: 8px 24px;
+  height: 32px;
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.act-time {
+  margin-top: 20px;
+  border-radius: 25px;
+  background: #fff;
+  padding: 8px 24px;
+  height: 32px;
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.act-metrics {
+  margin-top: 20px;
+  border-radius: 25px;
+  background: #fff;
+  padding: 8px 24px;
+  height: 32px;
+  gap: 8px;
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+.act-form input {
+  max-width: 100px;
 }
 
-#types {
-  text-align: center;
-  background-color: transparent;
+.act-button {
+  color: black;
+  display: block;
+  margin: auto;
+  padding: 4px;
 }
 
 /* footer content */

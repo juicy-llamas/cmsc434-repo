@@ -112,24 +112,57 @@
           </div>
         </div>
         <div class="activity-page">
+          <h1>Activity</h1>
           <div class="week-view">
             <pre>&lt;              This Week               &gt;</pre>
-          </div>
-          <div class="act-select">
-            <label>Activity:</label>
-            <select id="types">
-              <option value="cardio">Cardio</option>
-              <option value="weights">Weights</option>
-              <option value="yoga">Yoga</option>
-              <option value="swim">Swimming</option>
-            </select>
           </div>
           <div class="act-graph">
             <p>Distance: 98 miles Time: 4.8 Hours</p>
             <p>Goal: 120 miles</p>
-            <img src="cardio.png" id="cgraph" alt="Monthly cardio" />
+            <img src="cardio2.png" id="cgraph" alt="Monthly cardio" />
           </div>
-          <div class="act-edit"><b>Edit</b></div>
+          <div class="act-edit"><b>Add Activity</b></div>
+
+          <div class="act-form">
+            <form>
+              <div class="act-select">
+                <label for="actvity">Select Activity </label>
+                <input
+                  list="types"
+                  name="exercises"
+                  id="Activity"
+                  placeholder="Jogging"
+                />
+                <datalist id="types">
+                  <option value="Cardio"></option>
+                  <option value="Weights"></option>
+                  <option value="Yoga"></option>
+                  <option value="Swimming"></option>
+                </datalist>
+              </div>
+              <div class="act-input">
+                <div class="act-time">
+                  <label for="time">Time</label>
+                  <input
+                    id="time"
+                    type="text"
+                    name="Time"
+                    placeholder="10 mins"
+                  />
+                </div>
+                <div class="act-metrics">
+                  <label for="metrics">Metrics </label>
+                  <input
+                    id="metrics"
+                    type="text"
+                    name="Metrics"
+                    placeholder="1 mile"
+                  />
+                </div>
+              </div>
+              <button id="add-act" class="act-button">Add Activity</button>
+            </form>
+          </div>
         </div>
         <div class="nutrition-page">
           <div class="diet">
