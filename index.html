@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="viewport" content="wclassth=device-width, initial-scale=1.0" />
+    <meta name="viewport"
+      content="wclassth=device-width, initial-scale=1.0" />
     <title>Phase 2</title>
     <link rel="stylesheet" href="main.css" />
   </head>
@@ -13,7 +14,8 @@
         <button class="user-btn">User</button>
         <button>Today</button>
         <button>Help</button>
-        <button><img src="notification.png" alt="Notification" /></button>
+        <button><img src="notification.png"
+            alt="Notification" /></button>
       </header>
 
       <main>
@@ -57,7 +59,8 @@
             <p class="profile-name">Beany the Bean</p>
             <p class="profile-length">Age: 23</p>
             <p class="profile-joined">Joined 6 months ago</p>
-            <img class="profile-img" src="beans.png" alt="profile pic" />
+            <img class="profile-img" src="beans.png"
+              alt="profile pic" />
           </div>
           <h1>Metrics</h1>
           <div class="profile-graph">
@@ -81,34 +84,95 @@
           <div class="act-graph">
             <p>Distance: 98 miles Time: 4.8 Hours</p>
             <p>Goal: 120 miles</p>
-            <img src="cardio.png" id="cgraph" alt="Monthly cardio" />
+            <img src="cardio.png" id="cgraph"
+              alt="Monthly cardio" />
           </div>
           <div class="act-edit"><b>Edit</b></div>
         </div>
         <div class="dashboard-page">dashboard</div>
+
         <div class="nutrition-page">
-          <h1>Nutrition Tracker</h1>
-          <div class="calorie-form">
-            <label for="food">Food Item:</label>
-            <input type="text" id="food" placeholder="Enter food item" />
+          <div class="diet">
+            <div class="nutrition-page">
+              <h1 class="diet-title">Nutrition Tracker</h1>
+              <div class="progress-bar-container">
+                <div class="progress-bar"
+                  id="progress-bar"></div>
+              </div>
+              <div class="nutrition-overview">
+                <p>Total Calories: <span
+                    id="total-calories">0</span></p>
+                <p>Carbs: <span id="total-carbs">0</span>g
+                  | Protein:
+                  <span id="total-protein">0</span>g |
+                  Fats: <span
+                    id="total-fats">0</span>g</p>
+              </div>
 
-            <label for="calories">Calories:</label>
-            <input type="number" id="calories" placeholder="Enter calories" />
-            <button id="add-calorie-btn">Add</button>
-          </div>
+              <div class="meal-sections">
+                <div class="meal-section">
+                  <h2>Breakfast</h2>
+                  <button class="add-food-btn"
+                    data-meal="breakfast">Add
+                    Food</button>
+                  <ul id="breakfast-list"
+                    class="meal-list"></ul>
+                </div>
 
-          <div class="calorie-log">
-            <h2>Today's Intake</h2>
-            <ul id="calorie-list">
-              <li>Subway Veggie Delite: 300 Calories</li>
-            </ul>
-            <p>Total Calories: <span id="total-calories">300</span></p>
+                <div class="meal-section">
+                  <h2>Lunch</h2>
+                  <button class="add-food-btn"
+                    data-meal="lunch">Add Food</button>
+                  <ul id="lunch-list" class="meal-list"></ul>
+                </div>
+
+                <div class="meal-section">
+                  <h2>Dinner</h2>
+                  <button class="add-food-btn"
+                    data-meal="dinner">Add
+                    Food</button>
+                  <ul id="dinner-list" class="meal-list"></ul>
+                </div>
+
+                <div class="meal-section">
+                  <h2>Snacks</h2>
+                  <button class="add-food-btn"
+                    data-meal="snacks">Add
+                    Food</button>
+                  <ul id="snacks-list" class="meal-list"></ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
       </main>
+      <div id="add-food-modal" class="modal">
+        <div class="modal-content">
+          <h2>Add Food Entry</h2>
+          <label for="food-name">Food Name:</label>
+          <input type="text" id="food-name"
+            placeholder="Enter food name" />
 
-      <div class="persistent">
+          <label for="carbs">Carbs (g):</label>
+          <input type="number" id="carbs" placeholder="Enter carbs" />
+
+          <label for="protein">Protein (g):</label>
+          <input type="number" id="protein"
+            placeholder="Enter protein" />
+
+          <label for="fats">Fats (g):</label>
+          <input type="number" id="fats" placeholder="Enter fats" />
+
+          <label for="calories">Calories:</label>
+          <input type="number" id="modal-calories"
+            placeholder="Enter calories" />
+
+          <button id="save-food-btn">Save</button>
+          <button id="close-modal-btn">Close</button>
+        </div>
+      </div>
+      <div>
         <div class="svg-circle main-btn">
           <svg
             viewBox="-0.5 0 25 25"
