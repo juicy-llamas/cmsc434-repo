@@ -11,7 +11,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 /* phone outline & content */
@@ -165,12 +165,31 @@ main * {
 /* user page */
 
 .user-page .profile-img {
-  border-radius: 50%;
   grid-row: 1/4;
   grid-column: 3;
-  max-width: 100%;
-  max-height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
+
+.user-page .profile-img img {
+  border-radius: 50%;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.user-page .profile-img svg {
+  position: relative;
+  top: 30%;
+  left: 0%;
+}
+.user-page .profile-img svg path {
+  fill: #add;
+}
+.user-page .profile-img:hover svg path {
+  fill: var( --main-font-color );
+}
+.user-page .profile-img:hover { cursor: pointer; }
 
 .user-page .profile-name {
   grid-row: 1;
@@ -178,6 +197,16 @@ main * {
   font-weight: bold;
   /* todo: CHANGE THIS CUASE ITS BAD */
   line-height: 30px;
+  display: flex;
+  flex-direction: row;
+}
+.user-page .pf-name-edit {
+  display: none;
+  position: absolute;
+  top: 26%;
+}
+.user-page .pf-name-edit input {
+  background-color: var( --main-bg-color );
 }
 
 .user-page .profile-length {
@@ -185,6 +214,18 @@ main * {
   grid-column: 1/3;
   /* todo: CHANGE THIS CUASE ITS BAD */
   line-height: 30px;
+}
+
+.user-page .profile-name svg path {
+  fill: #add;
+}
+.user-page .profile-name:hover svg path {
+  fill: var( --main-font-color );
+}
+.user-page .profile-name:hover { cursor: pointer; }
+
+.user-page .profile-name svg{
+  margin-left: 2px;
 }
 
 .user-page .profile-joined {
@@ -202,15 +243,23 @@ main * {
   height: 20%;
 }
 
-.user-page>* {
-  margin-bottom: 24px;
+.user-page .privacy-opts div {
+  display:flex;
+  margin-bottom: 8px;
+}
+.user-page .privacy-opts div input {
+  margin-left: 12px;
+  margin-right: 4px;
 }
 
-.user-page .profile-graph img {
-  border: 1px solid yellow;
-  position: relative;
-  left: 20%;
-  max-width: 80%;
+.logout {
+  padding: 3px 8px;
+  color: var( --main-font-color );
+  background-color: var( --main-bg-color );
+}
+
+.user-page>* {
+  margin-bottom: 16px;
 }
 
 /* persistent stuff */
@@ -335,7 +384,7 @@ main>div {
 /* Nutrition Page */
 .nutrition-page {
   padding: 16px;
-  display: flex;
+  /*display: flex;*/
   flex-direction: column;
   align-items: center;
 }

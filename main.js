@@ -1,6 +1,5 @@
 const main = () => {
-    const names = ['main', 'user', 'activity',
-        'dashboard', 'nutrition'];
+    const names = ['main', 'user', 'activity', 'nutrition'];
 
     const buttons = names.reduce((obj, e) => {
         obj[e] = document.querySelector("." + e + '-btn');
@@ -14,8 +13,8 @@ const main = () => {
     let last_btn = buttons['user'];
     let last_page = pages['user'];
 
-    for (let name of names) {
-        buttons[name].onclick = (() => (e) => {
+    for (const name of names) {
+        buttons[name].onclick = () => {
             console.log(name);
 
             last_btn.classList.remove("selected");
@@ -25,7 +24,7 @@ const main = () => {
 
             last_btn = buttons[name];
             last_page = pages[name];
-        })();
+        };
     }
 
     // display main page
@@ -33,7 +32,7 @@ const main = () => {
 
     // customizing bar width to match bar amt
     const bars = document.querySelectorAll('.bar');
-    for (bar of bars) {
+    for (const bar of bars) {
         bar.style.width = ((200 / 3) / bars.length).toString() + '%';
     }
 
@@ -65,6 +64,23 @@ const main = () => {
             caloriesInput.value = '';
         }
     };
+
+    // user
+    const pf_name = document.querySelector( '.user-page .profile-name' );
+    const pf_name_p = pf_name.getElementsByTagName( 'p' )[ 0 ];
+    const pf_edit = document.querySelector( '.user-page .pf-name-edit' );
+    const pf_edit_inp = pf_edit.children[ 0 ];
+
+    pf_name.addEventListener( 'click', () => {
+        const v = pf_edit.style.display;
+        pf_edit.style.display =  v === 'inline' ? '' : 'inline';
+    } );
+    pf_edit_inp.addEventListener( 'keydown', ( e ) => { 
+        if ( e.code === 'Enter' ) {
+            pf_name_p.innerHTML = pf_edit_inp.value;
+            pf_edit.style.display = '';
+        }
+    } );
 };
 
 window.onload = main;
