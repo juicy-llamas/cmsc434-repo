@@ -71,6 +71,9 @@ const main = () => {
     const pf_name_p = pf_name.getElementsByTagName( 'p' )[ 0 ];
     const pf_edit = document.querySelector( '.user-page .pf-name-edit' );
     const pf_edit_inp = pf_edit.children[ 0 ];
+    const pf_pwd_reset = document.querySelector( '.user-page .pwd-reset' );
+    const pf_pwd_body =  document.querySelector( '.user-page .pwd-reset-body' );
+    const pf_pwd_sub =  document.querySelector( '.user-page .pwd-reset-body button' );
 
     pf_name.addEventListener( 'click', ( e ) => {
         console.log( 'name click' );
@@ -92,15 +95,30 @@ const main = () => {
     } );
     pages['user'].addEventListener( 'click', () => {
         console.log( 'page click' );
-        if ( pf_edit.style.display === 'inline' ) {
+        if ( pf_edit.style.display === 'inline' )
             pf_edit.style.display = '';
-        }
+        if ( pf_pwd_body.style.display === 'block' )
+            pf_pwd_body.style.display = '';
     } );
     pf_edit_inp.addEventListener( 'keydown', ( e ) => { 
         if ( e.code === 'Enter' ) {
             pf_name_p.innerHTML = pf_edit_inp.value;
             pf_edit.style.display = '';
         }
+    } );
+    pf_pwd_reset.addEventListener( 'click', (e) => { 
+        if ( pf_pwd_body.style.display === '' ) {
+            e.stopPropagation();
+            pf_pwd_body.style.display = 'block';
+        }
+    } );
+    pf_pwd_body.addEventListener( 'click', (e) => { 
+        e.stopPropagation();
+    } );
+    pf_pwd_sub.addEventListener( 'click', (e) => { 
+        e.stopPropagation();
+        if ( pf_pwd_body.style.display === 'block' )
+            pf_pwd_body.style.display = '';
     } );
 };
 

@@ -35,7 +35,7 @@ const main = () => {
     cur_page = signup_page;
     fg_sub_page.classList.add( 'selected' );
   } );
-  forgot_btn.forEach( ( e ) => { e.addEventListener( 'click', () => {
+  const forgot_btn_onclick = () => {
     console.log( 'forgot btn' );
     login_page.classList.remove( 'selected' );
     signup_page.classList.remove( 'selected' );
@@ -43,7 +43,14 @@ const main = () => {
     toggle_btn.forEach( e => { e.innerHTML = 'Login'; } );
     cur_page = signup_page;
     forgot_page.classList.add( 'selected' );
-  } ); } );
+  };
+  forgot_btn.forEach( ( e ) => { 
+    e.addEventListener( 'click', forgot_btn_onclick ); 
+  } );
+
+  if ( window.location.hash === '#reset' ) {
+    forgot_btn_onclick();
+  }
 };
 
 window.onload = main;

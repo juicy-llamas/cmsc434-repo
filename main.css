@@ -75,6 +75,7 @@ main>div {
   height: 100%;
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
 }
 
 main * {
@@ -256,6 +257,10 @@ main * {
   padding: 3px 8px;
   color: var( --main-font-color );
   background-color: var( --main-bg-color );
+}
+
+.user-page .pwd-reset-body {
+  display: none;
 }
 
 .user-page>* {
