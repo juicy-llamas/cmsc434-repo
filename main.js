@@ -36,26 +36,47 @@ const main = () => {
         bar.style.width = ((200 / 3) / bars.length).toString() + '%';
     }
 
-    //nutriition
-    const addCalorieBtn = document.getElementById('add-calorie-btn');
-    const foodInput = document.getElementById('food');
-    const caloriesInput = document.getElementById('calories');
-    const calorieList = document.getElementById('calorie-list');
-    const totalCaloriesDisplay = document.getElementById('total-calories');
+    // Nutrition code
+    const mealButtons = document.querySelectorAll(".add-food-btn");
+    const modal = document.getElementById("add-food-modal");
+    const closeModalBtn = document.getElementById("close-modal-btn");
+    const saveFoodBtn = document.getElementById("save-food-btn");
+    const totalCaloriesDisplay = document.getElementById("total-calories");
+    const totalCarbsDisplay = document.getElementById("total-carbs");
+    const totalProteinDisplay = document.getElementById("total-protein");
+    const totalFatsDisplay = document.getElementById("total-fats");
+
 
     let totalCalories = 0;
+    let totalCarbs = 0;
+    let totalProtein = 0;
+    let totalFats = 0;
+    let currentMealList;
 
-    addCalorieBtn.onclick = () => {
-        const food = foodInput.value;
-        const calories = parseInt(caloriesInput.value);
+    mealButtons.forEach(button => {
+        button.addEventListener("click", (e) => {
+            currentMealList = document.getElementById(`${e.target.dataset.meal}-list`);
+            clearModalInputs();
+            modal.style.display = "block";
+        });
+    });
 
-        if (food && calories > 0) {
-            // Add food and calorie entry to the list
-            const li = document.createElement('li');
-            li.textContent = `${food}: ${calories} calories`;
-            calorieList.appendChild(li);
+    closeModalBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
 
-            // Update total calories
+    saveFoodBtn.addEventListener("click", () => {
+        const foodName = document.getElementById("food-name").value;
+        const carbs = parseInt(document.getElementById("carbs").value) || 0;
+        const protein = parseInt(document.getElementById("protein").value) || 0;
+        const fats = parseInt(document.getElementById("fats").value) || 0;
+        const calories = parseInt(document.getElementById("modal-calories").value) || 0;
+
+        if (foodName && calories > 0) {
+            const li = document.createElement("li");
+            li.textContent = `${foodName} -> Carbs: ${carbs}g, Protein: ${protein}g, Fats: ${fats}g, Calories: ${calories}`;
+            currentMealList.appendChild(li);
+
             totalCalories += calories;
             totalCaloriesDisplay.textContent = totalCalories.toString();
 
@@ -63,7 +84,32 @@ const main = () => {
             foodInput.value = '';
             caloriesInput.value = '';
         }
-    };
+    });
+
+    totalCarbs += carbs;
+    totalProtein += protein;
+    totalFats += fats;
+
+    totalCaloriesDisplay.textContent = totalCalories;
+    totalCarbsDisplay.textContent = totalCarbs;
+    totalProteinDisplay.textContent = totalProtein;
+    totalFatsDisplay.textContent = totalFats;
+
+    modal.style.display = "none";
+
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+
+    function clearModalInputs() {
+        document.getElementById("food-name").value = "";
+        document.getElementById("carbs").value = "";
+        document.getElementById("protein").value = "";
+        document.getElementById("fats").value = "";
+        document.getElementById("modal-calories").value = "";
+    }
 
     // user
     const pf_name = document.querySelector( '.user-page .profile-name' );

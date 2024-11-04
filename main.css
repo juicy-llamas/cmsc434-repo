@@ -442,47 +442,127 @@ main>div {
   padding: 16px;
   /*display: flex;*/
   flex-direction: column;
-  align-items: center;
+  background-color: var(--main-bg-color);
 }
 
-.calorie-form {
+.diet-title {
+  display: flexbox;
+  text-align: center;
+}
+
+.nutrition-overview {
+  text-align: center;
   margin-bottom: 20px;
 }
 
-.calorie-form input {
-  margin: 10px 0;
-  padding: 8px;
-  width: 100%;
+.nutrition-overview p {
+  font-size: 1rem;
+  margin: 5px 0;
+  color: var(--main-font-color);
 }
 
-.calorie-form button {
-  padding: 10px 20px;
+.meal-sections {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 400px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.meal-section {
+  margin-bottom: 20px;
+  background-color: #1e2b34;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.meal-section h2 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: var(--main-font-color);
+
+}
+
+.meal-section button {
+  padding: 8px 12px;
   background-color: var(--header-bg-color);
   color: var(--header-font-color);
   border: none;
+  border-radius: 5px;
   cursor: pointer;
+  align-self: flex-start;
 }
 
-.calorie-log ul {
+.meal-list {
   list-style-type: none;
   padding: 0;
-  width: 100%;
   margin-top: 10px;
 }
 
-.calorie-log ul li {
+.meal-list li {
   padding: 8px;
   background-color: var(--main-bg-color);
   color: var(--main-font-color);
   margin-bottom: 5px;
   border: 1px solid var(--header-bg-color);
+  border-radius: 4px;
 }
 
-.calorie-log p {
-  margin-top: 20px;
-  font-size: 1.2rem;
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
 }
 
-#add-calorie-btn:hover {
+.modal-content {
+  padding: 20px;
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.modal-content label {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal-content button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: var(--header-bg-color);
+  color: var(--header-font-color);
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
+}
+
+
+#save-food-btn {
+  margin-right: 10px;
+}
+
+#close-modal-btn {
+  background-color: #e74c3c;
 }
