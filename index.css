@@ -1,0 +1,34 @@
+
+main {
+    height: calc(100% - 60px);
+}
+header {
+    justify-content: space-between;
+}
+header > * {
+    margin: 18px;
+}
+main h1 {
+  margin-bottom: 18px;
+}
+main form {
+  display: grid;
+  column-count: 2;
+  grid-template-columns: 40% / 60%;
+  gap: 8px;
+}
+main form span {
+  margin-right: 4px;
+}
+main form input, main button {
+  padding: 2px;
+  margin-bottom: 8px;
+  color: var( --main-font-color );
+  background-color: var( --main-bg-color );
+  grid-column: 2;
+}
+input[type="submit"], main button {
+  margin-top: 12px;
+  padding: 4px;
+  grid-column: 1;
+}

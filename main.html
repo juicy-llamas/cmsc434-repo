@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="wclassth=device-width, initial-scale=1.0" />
+    <title>Phase 2</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <script src="main.js">
+    </script>
+    <section class="outline">
+      <header>
+        <button class="user-btn">User</button>
+        <button>Today</button>
+        <button>Help</button>
+        <button><img src="notification.png" alt="Notification" /></button>
+      </header>
+
+      <main>
+        <div class="main-page">
+          <div class="streak-display">
+            <p>Streak!</p>
+            <div class="streak-circle">
+              <span>1</span>
+            </div>
+          </div>
+
+          <div class="graph-section">
+            <div class="exercisetab graph-menu">
+              <button class="active">Steps</button>
+              <button class="active">Exercise</button>
+              <button class="active">Weight</button>
+            </div>
+            <div class="timetab graph-menu">
+              <button class="active">Day</button>
+              <button class="active">Week</button>
+              <button class="active">Month</button>
+            </div>
+            <div class="graph">
+              <div class="bar" style="height: 50%"></div>
+              <div class="bar" style="height: 40%"></div>
+              <div class="bar" style="height: 70%"></div>
+              <div class="bar" style="height: 90%"></div>
+              <div class="bar" style="height: 20%"></div>
+              <div class="bar" style="height: 30%"></div>
+              <div class="bar" style="height: 80%"></div>
+            </div>
+
+            <div class="arrow-down">
+              <h3 class="streak-display">scroll down</h3>
+            </div>
+          </div>
+        </div>
+        <div class="user-page">
+          <h1>Profile</h1>
+          <div class="profile-card">
+            <div class="profile-name">
+              <p>Beany the Bean</p>
+              <svg width="28px" height="28px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.56078 20.2501L20.5608 8.25011L15.7501 3.43945L3.75012 15.4395V20.2501H8.56078ZM15.7501 5.56077L18.4395 8.25011L16.5001 10.1895L13.8108 7.50013L15.7501 5.56077ZM12.7501 8.56079L15.4395 11.2501L7.93946 18.7501H5.25012L5.25012 16.0608L12.7501 8.56079Z"/></svg>
+            </div>
+            <div class="pf-name-edit">
+              <input type="text" />
+            </div>
+            <p class="profile-length">Age: 23</p>
+            <p class="profile-joined">Joined 6 months ago</p>
+            <div class="profile-img">
+              <img src="beans.png" alt="profile pic" />
+              <svg width="28px" height="28px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.56078 20.2501L20.5608 8.25011L15.7501 3.43945L3.75012 15.4395V20.2501H8.56078ZM15.7501 5.56077L18.4395 8.25011L16.5001 10.1895L13.8108 7.50013L15.7501 5.56077ZM12.7501 8.56079L15.4395 11.2501L7.93946 18.7501H5.25012L5.25012 16.0608L12.7501 8.56079Z"/></svg>
+            </div>
+          </div>
+          <div style="width:80%;height:3px;position:relative;left:10%;background-color:var( --main-font-color );"></div>
+          <h3>Privacy</h3>
+          <div class="privacy-opts">
+            <div><input type="checkbox" /><p>Publicize Profile</p></div>
+            <div><input type="checkbox" /><p>Publicize Exercise</p></div>
+            <div><input type="checkbox" /><p>Publicize Nutrition</p></div>
+            <div><input type="checkbox" /><p>Display Email</p></div>
+            <div><input type="checkbox" /><p>Display Profile Picture</p></div>
+            <div><input type="checkbox" /><p>Track Location</p></div>
+          </div>
+          <a href="index.html"><button class="logout">Logout</button></a>
+        </div>
+        <div class="activity-page">
+          <div class="week-view">
+            <pre>&lt;              This Week               &gt;</pre>
+          </div>
+          <div class="act-select">
+            <label>Activity:</label>
+            <select id="types">
+              <option value="cardio">Cardio</option>
+              <option value="weights">Weights</option>
+              <option value="yoga">Yoga</option>
+              <option value="swim">Swimming</option>
+            </select>
+          </div>
+          <div class="act-graph">
+            <p>Distance: 98 miles Time: 4.8 Hours</p>
+            <p>Goal: 120 miles</p>
+            <img src="cardio.png" id="cgraph" alt="Monthly cardio" />
+          </div>
+          <div class="act-edit"><b>Edit</b></div>
+        </div>
+        <div class="dashboard-page">dashboard</div>
+        <div class="nutrition-page">
+          <h1>Nutrition Tracker</h1>
+          <div class="calorie-form">
+            <label for="food">Food Item:</label>
+            <input type="text" id="food" placeholder="Enter food item" />
+
+            <label for="calories">Calories:</label>
+            <input type="number" id="calories" placeholder="Enter calories" />
+            <button id="add-calorie-btn">Add</button>
+          </div>
+
+          <div class="calorie-log">
+            <h2>Today's Intake</h2>
+            <ul id="calorie-list">
+              <li>Subway Veggie Delite: 300 Calories</li>
+            </ul>
+            <p>Total Calories: <span id="total-calories">300</span></p>
+          </div>
+        </div>
+
+      </main>
+
+      <footer>
+        <nav>
+          <button class="activity-btn">Activity</button>
+          <button class="main-btn">Dashboard</button>
+          <button class="nutrition-btn">Nutrition</button>
+        </nav>
+      </footer>
+    </section>
+
+  </body>
+</html>
