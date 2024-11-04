@@ -86,13 +86,34 @@ const main = () => {
 
     // user
     const pf_name = document.querySelector('.user-page .profile-name');
+    const pf_name_icon = document.querySelector('.user-page .profile-name svg');
     const pf_name_p = pf_name.getElementsByTagName('p')[0];
     const pf_edit = document.querySelector('.user-page .pf-name-edit');
     const pf_edit_inp = pf_edit.children[0];
 
-    pf_name.addEventListener('click', () => {
-        const v = pf_edit.style.display;
-        pf_edit.style.display = v === 'inline' ? '' : 'inline';
+    pf_name.addEventListener('click', (e) => {
+        console.log('name click');
+        if (pf_edit.style.display === '') {
+            pf_edit.style.display = 'inline';
+            pf_edit_inp.value = pf_name_p.innerHTML;
+            pf_edit_inp.focus();
+            pf_edit_inp.select();
+            e.stopPropagation();
+        }
+    });
+    pf_name_icon.addEventListener('click', (e) => {
+        console.log('icon click');
+        if (pf_edit.style.display === 'inline') {
+            pf_name_p.innerHTML = pf_edit_inp.value;
+            pf_edit.style.display = '';
+            e.stopPropagation();
+        }
+    });
+    pages['user'].addEventListener('click', () => {
+        console.log('page click');
+        if (pf_edit.style.display === 'inline') {
+            pf_edit.style.display = '';
+        }
     });
     pf_edit_inp.addEventListener('keydown', (e) => {
         if (e.code === 'Enter') {
