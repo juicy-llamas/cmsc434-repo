@@ -108,7 +108,7 @@ main * {
 
 .type,
 .time {
-  border: none;               
+  border: 2px solid var(--header-font-color);             
   border-radius: 5px;          
   padding: 5px 10px;           
   font-size: 0.9rem;           
@@ -352,23 +352,6 @@ main * {
 
 .activity-page h1 {
   text-align: center;
-}
-
-.week-view {
-  margin-top: 5px;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 20px;
-  text-align: center;
-  align-items: center;
-}
-.act-graph {
-  margin-top: 5px;
-  text-align: center;
-}
-#cgraph {
-  margin-top: 20px;
-  width: 200px;
 }
 
 .act-select {

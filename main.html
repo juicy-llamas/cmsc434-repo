@@ -25,7 +25,7 @@
       <main>
         <div class="main-page">
           <div class="streak-display">
-            <p>Streak!</p>
+            <p>Consistency Streak!</p>
             <div class="streak-circle">
               <span>1</span>
             </div>
@@ -38,7 +38,8 @@
               <button class="type">Weight</button>
             </div>
           <div class = "maingraph">
-            <img src="graph1.png" alt="graph"  class="graph-content" />
+            <img src="steps.png" alt="graph"  class="graph-content" />
+            
           </div>
             <div class="timetab">
               <button class="time">Day</button>
@@ -93,6 +94,8 @@
             <span>  Weight: </span>
             <input type="text" id="weight"/> lbs
           </div>
+          <button type="button" class="updatebutton" onclick="alert('Biometrics Updated!')">Update</button>
+
           <div style="width:80%;height:3px;position:relative;left:10%;background-color:var( --main-font-color );"></div>
           <h3>Privacy</h3>
           <div class="privacy-opts">
@@ -112,15 +115,12 @@
           </div>
         </div>
         <div class="activity-page">
-          <h1>Activity</h1>
-          <div class="week-view">
-            <pre>&lt;              This Week               &gt;</pre>
-          </div>
+          <h1>Activity Tracker</h1>
           <div class="act-graph">
             <p>Distance: 98 miles Time: 4.8 Hours</p>
             <p>Goal: 120 miles</p>
-            <img src="cardio2.png" id="cgraph" alt="Monthly cardio" />
           </div>
+          
           <div class="act-edit"><b>Add Activity</b></div>
 
           <div class="act-form">
@@ -157,6 +157,15 @@
                     type="text"
                     name="Metrics"
                     placeholder="1 mile"
+                  />
+                </div>
+                <div class="act-metrics">
+                  <label for="metrics">Difficulty </label>
+                  <input
+                    id="metrics"
+                    type="text"
+                    name="Metrics"
+                    placeholder="Medium"
                   />
                 </div>
               </div>

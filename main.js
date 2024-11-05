@@ -163,4 +163,21 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("fats").value = "";
         document.getElementById("modal-calories").value = "";
     }
+
+    const typeButtons = document.querySelectorAll('.type');
+    const image = document.querySelector('.graph-content');
+    typeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const buttonText = button.textContent;
+            let imagepath = '';
+            if (buttonText === 'Steps') {
+                imagepath = 'steps.png';
+            } else if (buttonText === 'Exercise') {
+                imagepath = 'exercise.png';
+            } else if (buttonText === 'Weight') {
+                imagepath = 'weight.png';
+            }
+            image.src = imagepath;
+        });
+    });
 });
