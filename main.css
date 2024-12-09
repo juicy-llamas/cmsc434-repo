@@ -306,6 +306,24 @@ main * {
   margin-bottom: 6px;
   box-sizing: border-box;
 }
+.weight input[type="text"] {
+  padding: 8px; 
+  width: 50%; 
+  box-sizing: border-box; 
+  border: 1px solid #000000; 
+  border-radius: 4px; 
+  font-size: 1rem;
+}
+
+.weight {
+  display: flex; 
+  align-items: center; 
+  gap: 8px; 
+}
+
+.weight span {
+  font-size: 1rem; 
+}
 
 .updatebutton {
   width: 100%; 
@@ -430,6 +448,15 @@ footer nav button {
   align-items: center;
 }
 
+footer nav button:hover {
+  background-color: rgba(0, 0, 0, 0.1); 
+  border-radius: 8px; 
+}
+
+footer nav button.selected {
+  border-top: 3px solid #000000; 
+  background-color: rgba(76, 175, 80, 0.05); 
+}
 /* nav related stuff */
 
 main>div {
@@ -598,4 +625,25 @@ input[type="submit"], main button {
   margin-top: 12px;
   padding: 4px;
   grid-column: 1;
+}
+
+/* dynamic home page*/
+.progress-bar-container {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #ccc;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #4caf50;
+  width: 0%;
+  transition: width 0.3s ease-in-out;
 }
