@@ -1,5 +1,5 @@
 const main = () => {
-    const names = ['main', 'user', 'activity', 'nutrition'];
+    const names = ['main', 'user', 'activity', 'nutrition', 'explore'];
 
     const buttons = names.reduce((obj, e) => {
         obj[e] = document.querySelector("." + e + '-btn');
@@ -9,6 +9,9 @@ const main = () => {
         obj[e] = document.querySelector("." + e + '-page');
         return obj;
     }, {});
+
+    console.log( buttons );
+    console.log( pages );
 
     let last_btn = buttons['user'];
     let last_page = pages['user'];
