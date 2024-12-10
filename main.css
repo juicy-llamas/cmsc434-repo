@@ -11,7 +11,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 /* phone outline & content */
@@ -53,7 +53,7 @@ header button {
   background: none;
   border: none;
   cursor: pointer;
-  display:flex;
+  display: flex;
   align-items: center;
 }
 
@@ -90,10 +90,10 @@ main * {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 400px; 
+  max-width: 400px;
   margin: 0 auto;
   padding: 20px;
-  border: 1px solid black; 
+  border: 1px solid black;
   box-sizing: border-box;
 }
 
@@ -108,17 +108,17 @@ main * {
 
 .type,
 .time {
-  border: 2px solid var(--header-font-color);             
-  border-radius: 5px;          
-  padding: 5px 10px;           
-  font-size: 0.9rem;           
+  border: 2px solid var(--header-font-color);
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 0.9rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .type:hover,
 .time:hover {
-  background-color: lightgray; 
+  background-color: lightgray;
 }
 
 .maingraph {
@@ -127,16 +127,16 @@ main * {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid black; 
-  background-color: #f9f9f9; 
-  overflow: hidden; 
+  border: 1px solid black;
+  background-color: #f9f9f9;
+  overflow: hidden;
   position: relative;
 }
 
 .maingraph .graph-content {
-  max-width: 100%; 
-  max-height: 100%; 
-  object-fit: contain; 
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 /* dashboard -> streak */
@@ -159,7 +159,7 @@ main * {
 .streak-circle {
   width: 80px;
   height: 80px;
-  border: 2px solid rgb(0,0,0);
+  border: 2px solid rgb(0, 0, 0);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -170,7 +170,7 @@ main * {
 
 .streak-circle span {
   text-align: center;
-  color: rgb(0,0,0);
+  color: rgb(0, 0, 0);
 }
 
 /* user page */
@@ -194,13 +194,18 @@ main * {
   top: 30%;
   left: 0%;
 }
+
 .user-page .profile-img svg path {
-  fill: var( --main-font-color );
+  fill: var(--main-font-color);
 }
+
 .user-page .profile-img:hover svg path {
   fill: #088;
 }
-.user-page .profile-img:hover { cursor: pointer; }
+
+.user-page .profile-img:hover {
+  cursor: pointer;
+}
 
 .user-page .profile-name {
   grid-row: 1;
@@ -211,13 +216,15 @@ main * {
   display: flex;
   flex-direction: row;
 }
+
 .user-page .pf-name-edit {
   display: none;
   position: absolute;
   top: 26%;
 }
+
 .user-page .pf-name-edit input {
-  background-color: var( --main-bg-color );
+  background-color: var(--main-bg-color);
 }
 
 .user-page .profile-length {
@@ -228,14 +235,18 @@ main * {
 }
 
 .user-page .profile-name svg path {
-  fill: var( --main-font-color );
+  fill: var(--main-font-color);
 }
+
 .user-page .profile-name:hover svg path {
   fill: #088;
 }
-.user-page .profile-name:hover { cursor: pointer; }
 
-.user-page .profile-name svg{
+.user-page .profile-name:hover {
+  cursor: pointer;
+}
+
+.user-page .profile-name svg {
   margin-left: 2px;
 }
 
@@ -267,18 +278,22 @@ main * {
   gap: 10px;
   margin-bottom: 6px;
 }
+
 .gender-section label {
   display: flex;
   align-items: center;
 }
+
 .gender-section input[type="radio"] {
   display: none;
 }
+
 .gender-section .radio-label {
   position: relative;
   padding-left: 25px;
   cursor: pointer;
 }
+
 .gender-section .radio-label::before {
   content: '';
   position: absolute;
@@ -290,10 +305,12 @@ main * {
   border-radius: 50%;
   background-color: white;
 }
-.gender-section input[type="radio"]:checked + .radio-label::before {
+
+.gender-section input[type="radio"]:checked+.radio-label::before {
   background-color: blue;
   border: 1px solid blue;
 }
+
 .gender-section label {
   display: block;
   margin-top: 10px;
@@ -306,29 +323,30 @@ main * {
   margin-bottom: 6px;
   box-sizing: border-box;
 }
+
 .weight input[type="text"] {
-  padding: 8px; 
-  width: 50%; 
-  box-sizing: border-box; 
-  border: 1px solid #000000; 
-  border-radius: 4px; 
+  padding: 8px;
+  width: 50%;
+  box-sizing: border-box;
+  border: 1px solid #000000;
+  border-radius: 4px;
   font-size: 1rem;
 }
 
 .weight {
-  display: flex; 
-  align-items: center; 
-  gap: 8px; 
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .weight span {
-  font-size: 1rem; 
+  font-size: 1rem;
 }
 
 .updatebutton {
-  width: 100%; 
+  width: 100%;
   padding: 10px;
-  margin-top: 16px; 
+  margin-top: 16px;
   font-size: 16px;
   background-color: blue;
   color: white;
@@ -344,9 +362,10 @@ main * {
 /* user page -> privacy */
 
 .user-page .privacy-opts div {
-  display:flex;
+  display: flex;
   margin-bottom: 8px;
 }
+
 .user-page .privacy-opts div input {
   margin-left: 12px;
   margin-right: 4px;
@@ -354,8 +373,8 @@ main * {
 
 .logout {
   padding: 3px 8px;
-  color: var( --main-font-color );
-  background-color: var( --main-bg-color );
+  color: var(--main-font-color);
+  background-color: var(--main-bg-color);
 }
 
 .user-page .pwd-reset-body {
@@ -367,55 +386,187 @@ main * {
 }
 
 /* activty page */
+.activity-page {
+  padding: 16px;
+  flex-direction: column;
+  background-color: var(--main-bg-color);
+}
 
-.activity-page h1 {
+.activity-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.activity-overview {
+  margin-bottom: 20px;
   text-align: center;
 }
 
-.act-select {
-  margin-top: 10px;
-  border-radius: 25px;
-  background: #fff;
-  padding: 8px 24px;
-  height: 32px;
-  gap: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.act-time {
-  margin-top: 20px;
-  border-radius: 25px;
-  background: #fff;
-  padding: 8px 24px;
-  height: 32px;
-  gap: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.act-metrics {
-  margin-top: 20px;
-  border-radius: 25px;
-  background: #fff;
-  padding: 8px 24px;
-  height: 32px;
-  gap: 8px;
-  display: flex;
-  margin-bottom: 10px;
-  align-items: center;
-  justify-content: space-between;
-}
-.act-form input {
-  max-width: 100px;
+.activity-overview p {
+  font-size: 1rem;
+  margin: 5px 0;
+  color: var(--main-font-color);
 }
 
-.act-button {
-  color: black;
-  display: block;
-  margin: auto;
+.progress-bar-container {
+  width: 100%;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+#close-modal-btn,
+#close-activity-modal-btn {
+  background-color: #e74c3c;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-block;
+}
+
+#close-modal-btn:hover,
+#close-activity-modal-btn:hover {
+  background-color: #d62c1a;
+}
+
+.progress-bar {
+  position: relative;
+  width: 100%;
+  background-color: #ccc;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #4caf50;
+  width: 0%;
+  transition: width 0.3s ease-in-out;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.9rem;
+  color: white;
+  font-weight: bold;
+}
+
+.activity-log-section {
+  margin-top: 20px;
+}
+
+.activity-log-section h2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  color: var(--main-font-color);
+}
+
+.activity-add-btn {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  font-size: 1.5rem;
+
+}
+
+.activity-log-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.activity-log-list li {
+  padding: 8px;
+  background-color: var(--main-bg-color);
+  color: var(--main-font-color);
+  margin-bottom: 5px;
+  border: 1px solid var(--header-bg-color);
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-activity-modal-btnclose-activity-modal-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #e74c3c;
   padding: 4px;
 }
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.modal-content label {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal-content button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.activity-add-btn:hover {
+  background-color: #45a049;
+}
+
+.delete-btn:hover {
+  color: #d62c1a;
+}
+
+
 
 /* footer content */
 
@@ -449,14 +600,15 @@ footer nav button {
 }
 
 footer nav button:hover {
-  background-color: rgba(0, 0, 0, 0.1); 
-  border-radius: 8px; 
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
 footer nav button.selected {
-  border-top: 3px solid #000000; 
-  background-color: rgba(76, 175, 80, 0.05); 
+  border-top: 3px solid #000000;
+  background-color: rgba(76, 175, 80, 0.05);
 }
+
 /* nav related stuff */
 
 main>div {
@@ -470,19 +622,18 @@ main>div {
 /* Nutrition Page */
 .nutrition-page {
   padding: 16px;
-  /*display: flex;*/
   flex-direction: column;
   background-color: var(--main-bg-color);
 }
 
-.diet-title {
-  display: flexbox;
+.nutrition-title {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .nutrition-overview {
-  text-align: center;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .nutrition-overview p {
@@ -491,7 +642,105 @@ main>div {
   color: var(--main-font-color);
 }
 
-.meal-sections {
+.progress-bar-container {
+  width: 100%;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.progress-bar {
+  position: relative;
+  width: 100%;
+  background-color: #ccc;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #4caf50;
+  width: 0%;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Nutrition Page */
+.nutrition-page {
+  padding: 16px;
+  flex-direction: column;
+  background-color: var(--main-bg-color);
+}
+
+.nutrition-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.nutrition-overview {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.nutrition-overview p {
+  font-size: 1rem;
+  margin: 5px 0;
+  color: var(--main-font-color);
+}
+
+.macro-totals {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--main-font-color);
+}
+
+.macro-totals p {
+  margin: 0;
+}
+
+
+.progress-bar-container {
+  width: 100%;
+  height: 20px;
+  background-color: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.progress-bar {
+  position: relative;
+  width: 100%;
+  background-color: #ccc;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #4caf50;
+  width: 0%;
+  transition: width 0.3s ease-in-out;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.9rem;
+  color: white;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+
+.nutrition-meal-sections {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -500,38 +749,48 @@ main>div {
   scroll-behavior: smooth;
 }
 
-.meal-section {
+.nutrition-meal-section {
   margin-bottom: 20px;
-  background-color: #1e2b34;
+  background-color: #fff;
   padding: 10px;
   border-radius: 8px;
-  background-color: #fff;
 }
 
-.meal-section h2 {
-  margin-bottom: 10px;
+.nutrition-meal-section h2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 1.2rem;
   color: var(--main-font-color);
-
 }
 
-.meal-section button {
-  padding: 8px 12px;
-  background-color: var(--header-bg-color);
-  color: var(--header-font-color);
+.nutrition-add-food-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  font-size: 1.5rem;
+  background-color: #4caf50;
+  color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 50%;
   cursor: pointer;
-  align-self: flex-start;
 }
 
-.meal-list {
+.nutrition-add-food-btn:hover {
+  background-color: #45a049;
+}
+
+
+.nutrition-meal-list {
   list-style-type: none;
   padding: 0;
   margin-top: 10px;
 }
 
-.meal-list li {
+.nutrition-meal-list li {
   padding: 8px;
   background-color: var(--main-bg-color);
   color: var(--main-font-color);
@@ -539,6 +798,7 @@ main>div {
   border: 1px solid var(--header-bg-color);
   border-radius: 4px;
 }
+
 
 .modal {
   display: none;
@@ -596,32 +856,166 @@ main>div {
 #close-modal-btn {
   background-color: #e74c3c;
 }
+
+
+
+.nutrition-meal-sections {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 400px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.nutrition-meal-section {
+  margin-bottom: 20px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.nutrition-meal-section h2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  color: var(--main-font-color);
+}
+
+.nutrition-add-food-btn {
+  padding: 4px 8px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.nutrition-add-food-btn:hover {
+  background-color: #45a049;
+}
+
+.nutrition-meal-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.nutrition-meal-list li {
+  padding: 8px;
+  background-color: var(--main-bg-color);
+  color: var(--main-font-color);
+  margin-bottom: 5px;
+  border: 1px solid var(--header-bg-color);
+  border-radius: 4px;
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.modal-content label {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal-content button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: var(--header-bg-color);
+  color: var(--header-font-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+#save-food-btn {
+  margin-right: 10px;
+}
+
+#close-modal-btn {
+  background-color: #e74c3c;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #ff0000;
+  padding: 4px;
+}
+
+
+/*End of Nutrition */
+
 header {
-    justify-content: space-between;
+  justify-content: space-between;
 }
-header > * {
-    margin: 18px;
+
+header>* {
+  margin: 18px;
 }
+
 main h1 {
   margin-bottom: 18px;
 }
+
 main form {
   display: grid;
   column-count: 2;
   grid-template-columns: 40% / 60%;
   gap: 8px;
 }
+
 main form span {
   margin-right: 4px;
 }
-main form input, main button {
+
+main form input,
+main button {
   padding: 2px;
   margin-bottom: 8px;
-  color: var( --main-font-color );
-  background-color: var( --main-bg-color );
+  color: var(--main-font-color);
+  background-color: var(--main-bg-color);
   grid-column: 2;
 }
-input[type="submit"], main button {
+
+input[type="submit"],
+main button {
   margin-top: 12px;
   padding: 4px;
   grid-column: 1;

@@ -1,130 +1,66 @@
 const main = () => {
-    const names = ['main', 'user', 'activity', 'nutrition', 'explore'];
-
+    const names = ["main", "user", "activity", "nutrition", "explore"];
     const buttons = names.reduce((obj, e) => {
-        obj[e] = document.querySelector("." + e + '-btn');
+        obj[e] = document.querySelector(`.${e}-btn`);
         return obj;
     }, {});
     const pages = names.reduce((obj, e) => {
-        obj[e] = document.querySelector("." + e + '-page');
+        obj[e] = document.querySelector(`.${e}-page`);
         return obj;
     }, {});
 
-    console.log( buttons );
-    console.log( pages );
-
-    let last_btn = buttons['user'];
-    let last_page = pages['user'];
+    let lastBtn = buttons["user"];
+    let lastPage = pages["user"];
 
     for (const name of names) {
         buttons[name].onclick = () => {
-            console.log(name);
-
-            last_btn.classList.remove("selected");
-            last_page.classList.remove("selected");
+            lastBtn.classList.remove("selected");
+            lastPage.classList.remove("selected");
             buttons[name].classList.add("selected");
             pages[name].classList.add("selected");
 
-            last_btn = buttons[name];
-            last_page = pages[name];
+            lastBtn = buttons[name];
+            lastPage = pages[name];
         };
     }
 
-    // display main page
-    buttons['main'].onclick();
+    buttons["main"].onclick();
 
-    // customizing bar width to match bar amt
-    const bars = document.querySelectorAll('.bar');
-    for (const bar of bars) {
-        bar.style.width = ((200 / 3) / bars.length).toString() + '%';
-    }
+    /*  Nutrition  */
 
-    // user
-    const pf_name = document.querySelector( '.user-page .profile-name' );
-    const pf_name_icon = document.querySelector( '.user-page .profile-name svg' );
-    const pf_name_p = pf_name.getElementsByTagName( 'p' )[ 0 ];
-    const pf_edit = document.querySelector( '.user-page .pf-name-edit' );
-    const pf_edit_inp = pf_edit.children[ 0 ];
-    const pf_pwd_reset = document.querySelector( '.user-page .pwd-reset' );
-    const pf_pwd_body =  document.querySelector( '.user-page .pwd-reset-body' );
-    const pf_pwd_sub =  document.querySelector( '.user-page .pwd-reset-body button' );
+    const nutritionData = {
+        totalCalories: 0,
+        totalCarbs: 0,
+        totalProtein: 0,
+        totalFats: 0,
+        dailyCalorieGoal: 2000,
+    };
 
-    pf_name.addEventListener( 'click', ( e ) => {
-        console.log( 'name click' );
-        if ( pf_edit.style.display === '' ) {
-            pf_edit.style.display = 'inline';
-            pf_edit_inp.value = pf_name_p.innerHTML;
-            pf_edit_inp.focus();
-            pf_edit_inp.select();
-            e.stopPropagation();
-        }
-    } );
-    pf_name_icon.addEventListener( 'click', ( e ) => {
-        console.log( 'icon click' );
-        if ( pf_edit.style.display === 'inline' ) {
-            pf_name_p.innerHTML = pf_edit_inp.value;
-            pf_edit.style.display = '';
-            e.stopPropagation();
-        }
-    } );
-    pages['user'].addEventListener( 'click', () => {
-        console.log( 'page click' );
-        if ( pf_edit.style.display === 'inline' )
-            pf_edit.style.display = '';
-        if ( pf_pwd_body.style.display === 'block' )
-            pf_pwd_body.style.display = '';
-    } );
-    pf_edit_inp.addEventListener( 'keydown', ( e ) => { 
-        if ( e.code === 'Enter' ) {
-            pf_name_p.innerHTML = pf_edit_inp.value;
-            pf_edit.style.display = '';
-        }
-    } );
-    pf_pwd_reset.addEventListener( 'click', (e) => { 
-        if ( pf_pwd_body.style.display === '' ) {
-            e.stopPropagation();
-            pf_pwd_body.style.display = 'block';
-        }
-    } );
-    pf_pwd_body.addEventListener( 'click', (e) => { 
-        e.stopPropagation();
-    } );
-    pf_pwd_sub.addEventListener( 'click', (e) => { 
-        e.stopPropagation();
-        if ( pf_pwd_body.style.display === 'block' )
-            pf_pwd_body.style.display = '';
-    } );
-};
+    const nutritionElements = {
+        calories: document.getElementById("total-calories"),
+        carbs: document.getElementById("total-carbs"),
+        protein: document.getElementById("total-protein"),
+        fats: document.getElementById("total-fats"),
+        progress: document.getElementById("calories-progress"),
+        progressText: document.getElementById("progress-text"),
+        mealLists: document.querySelectorAll(".nutrition-meal-list"),
+    };
 
-window.onload = main;
-
-document.addEventListener("DOMContentLoaded", () => {
-    const mealButtons = document.querySelectorAll(".nutrition-add-food-btn");
-    const modal = document.getElementById("add-food-modal");
-    const closeModalBtn = document.getElementById("close-modal-btn");
+    const nutritionModal = document.getElementById("add-food-modal");
+    const closeNutritionModalBtn = document.getElementById("close-modal-btn");
     const saveFoodBtn = document.getElementById("save-food-btn");
-
-    const totalCaloriesDisplay = document.getElementById("total-calories");
-    const totalCarbsDisplay = document.getElementById("total-carbs");
-    const totalProteinDisplay = document.getElementById("total-protein");
-    const totalFatsDisplay = document.getElementById("total-fats");
-
-    let totalCalories = 0;
-    let totalCarbs = 0;
-    let totalProtein = 0;
-    let totalFats = 0;
     let currentMealList;
 
-    mealButtons.forEach(button => {
-        button.addEventListener("click", (e) => {
+    document.querySelectorAll(".nutrition-add-food-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
             currentMealList = document.getElementById(`${e.target.dataset.meal}-list`);
-            clearModalInputs();
-            modal.style.display = "block";
+            clearNutritionModal();
+            nutritionModal.style.display = "block";
         });
     });
 
-    closeModalBtn.addEventListener("click", () => {
-        modal.style.display = "none";
+    closeNutritionModalBtn.addEventListener("click", () => {
+        nutritionModal.style.display = "none";
     });
 
     saveFoodBtn.addEventListener("click", () => {
@@ -135,52 +71,138 @@ document.addEventListener("DOMContentLoaded", () => {
         const calories = parseInt(document.getElementById("modal-calories").value) || 0;
 
         if (foodName && calories > 0) {
-            const li = document.createElement("li");
-            li.textContent = `${foodName}: Carbs: ${carbs}g, Protein: ${protein}g, Fats: ${fats}g, Calories: ${calories}`;
-            currentMealList.appendChild(li);
-
-            totalCalories += calories;
-            totalCarbs += carbs;
-            totalProtein += protein;
-            totalFats += fats;
-
-            totalCaloriesDisplay.textContent = totalCalories;
-            totalCarbsDisplay.textContent = totalCarbs;
-            totalProteinDisplay.textContent = totalProtein;
-            totalFatsDisplay.textContent = totalFats;
-
-            modal.style.display = "none";
+            addNutritionEntry(currentMealList, foodName, carbs, protein, fats, calories);
+            nutritionModal.style.display = "none";
         }
     });
 
-    window.addEventListener("click", (e) => {
-        if (e.target === modal) {
-            modal.style.display = "none";
-        }
-    });
+    const addNutritionEntry = (mealList, foodName, carbs, protein, fats, calories) => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+        ${foodName}: Carbs: ${carbs}g, Protein: ${protein}g, Fats: ${fats}g, Calories: ${calories}
+        <button class="delete-btn">🗑️</button>
+      `;
+        mealList.appendChild(li);
 
-    function clearModalInputs() {
+        updateNutritionTotals(carbs, protein, fats, calories);
+
+        li.querySelector(".delete-btn").addEventListener("click", () => {
+            mealList.removeChild(li);
+            updateNutritionTotals(-carbs, -protein, -fats, -calories);
+        });
+    };
+
+    const updateNutritionTotals = (carbs, protein, fats, calories) => {
+        nutritionData.totalCalories += calories;
+        nutritionData.totalCarbs += carbs;
+        nutritionData.totalProtein += protein;
+        nutritionData.totalFats += fats;
+
+        nutritionElements.calories.textContent = nutritionData.totalCalories;
+        nutritionElements.carbs.textContent = nutritionData.totalCarbs;
+        nutritionElements.protein.textContent = nutritionData.totalProtein;
+        nutritionElements.fats.textContent = nutritionData.totalFats;
+
+        const progressPercentage = Math.min(
+            (nutritionData.totalCalories / nutritionData.dailyCalorieGoal) * 100,
+            100
+        );
+        nutritionElements.progress.style.width = `${progressPercentage}%`;
+        nutritionElements.progressText.textContent = `${Math.round(progressPercentage)}%`;
+    };
+
+    const clearNutritionModal = () => {
         document.getElementById("food-name").value = "";
         document.getElementById("carbs").value = "";
         document.getElementById("protein").value = "";
         document.getElementById("fats").value = "";
         document.getElementById("modal-calories").value = "";
-    }
+    };
 
-    const typeButtons = document.querySelectorAll('.type');
-    const image = document.querySelector('.graph-content');
-    typeButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const buttonText = button.textContent;
-            let imagepath = '';
-            if (buttonText === 'Steps') {
-                imagepath = 'steps.png';
-            } else if (buttonText === 'Exercise') {
-                imagepath = 'exercise.png';
-            } else if (buttonText === 'Weight') {
-                imagepath = 'weight.png';
-            }
-            image.src = imagepath;
-        });
+    /*  Fitness Tracker */
+
+    const activityData = {
+        totalCalories: 0,
+        totalTime: 0,
+        totalDistance: 0,
+        dailyCalorieGoal: 500,
+    };
+
+    const activityElements = {
+        calories: document.getElementById("total-activity-calories"),
+        time: document.getElementById("total-activity-time"),
+        distance: document.getElementById("total-activity-distance"),
+        progress: document.getElementById("activity-progress-fill"),
+        progressText: document.getElementById("activity-progress-text"),
+        activityList: document.getElementById("activity-list"),
+    };
+
+    const activityModal = document.getElementById("add-activity-modal");
+    const closeActivityModalBtn = document.getElementById("close-activity-modal-btn");
+    const saveActivityBtn = document.getElementById("save-activity-btn");
+
+    document.querySelector(".activity-add-btn").addEventListener("click", () => {
+        activityModal.style.display = "block";
+        clearActivityModal();
     });
-});
+
+    closeActivityModalBtn.addEventListener("click", () => {
+        activityModal.style.display = "none";
+    });
+
+    saveActivityBtn.addEventListener("click", () => {
+        const type = document.getElementById("activity-type").value;
+        const time = parseFloat(document.getElementById("activity-time").value) || 0;
+        const distance = parseFloat(document.getElementById("activity-distance").value) || 0;
+        const difficulty = document.getElementById("activity-difficulty").value;
+        const calories = parseInt(document.getElementById("activity-calories").value) || 0;
+
+        if (type && time > 0 && distance > 0 && calories > 0) {
+            addActivityEntry(type, time, distance, difficulty, calories);
+            activityModal.style.display = "none";
+        }
+    });
+
+    const addActivityEntry = (type, time, distance, difficulty, calories) => {
+        const li = document.createElement("li");
+        li.innerHTML = `
+        ${type}: ${time} hrs, ${distance} miles, ${difficulty}, ${calories} cal
+        <button class="delete-btn">🗑️</button>
+      `;
+        activityElements.activityList.appendChild(li);
+
+        updateActivityTotals(time, distance, calories);
+
+        li.querySelector(".delete-btn").addEventListener("click", () => {
+            activityElements.activityList.removeChild(li);
+            updateActivityTotals(-time, -distance, -calories);
+        });
+    };
+
+    const updateActivityTotals = (time, distance, calories) => {
+        activityData.totalCalories += calories;
+        activityData.totalTime += time;
+        activityData.totalDistance += distance;
+
+        activityElements.calories.textContent = activityData.totalCalories;
+        activityElements.time.textContent = activityData.totalTime.toFixed(1);
+        activityElements.distance.textContent = activityData.totalDistance.toFixed(1);
+
+        const progressPercentage = Math.min(
+            (activityData.totalCalories / activityData.dailyCalorieGoal) * 100,
+            100
+        );
+        activityElements.progress.style.width = `${progressPercentage}%`;
+        activityElements.progressText.textContent = `${Math.round(progressPercentage)}%`;
+    };
+
+    const clearActivityModal = () => {
+        document.getElementById("activity-type").value = "";
+        document.getElementById("activity-time").value = "";
+        document.getElementById("activity-distance").value = "";
+        document.getElementById("activity-difficulty").value = "";
+        document.getElementById("activity-calories").value = "";
+    };
+};
+
+window.onload = main;
